@@ -28,10 +28,11 @@ if(!isset($_SESSION["username"]))
             <br><h1 class="cgmadmin"> CGM ADMIN</h1><br><br>
                     <div class="inner">
                         <div class="dashnav">
-                        <p class="btn"><a href="appointment_admin.php#Appointment">View Appointment</a><p>
+                        <p class="btn"><a href="information.php#upload">Edit Website's Information</a><p>
+                        <p style="background: linear-gradient(90deg, #2427ff, #020049);" class="btn"><a href="appointment_admin.php#Appointment">View Appointment</a><p>
                         <p class="btn"><a href="viewprayer_admin.php#prayerReq">View Prayer Requests</a><p>
-                            <p class="btn"><a href="attendance_admin.php#attendance">Attendance</a><p>
-                            <p class="btn"><a href="attendancelist_admin.php#Attendancelist">View Attendance List</a><p>
+                        <p class="btn"><a href="attendancelist_admin.php#Attendancelist">View Attendance List</a><p>    
+                        <p class="btn"><a href="add_user.php#Adduser">Add User</a><p>    
                         </div>
                     </div>
             </div>
@@ -72,7 +73,7 @@ if(!isset($_SESSION["username"]))
                     include('cgmdbconnection.php');
                     $dibconfig = mysqli_select_db($con,'cgm');
                     
-                    $query = "SELECT * FROM appointment";
+                    $query = "SELECT * FROM appointment ORDER BY id DESC";
                     $query_run = mysqli_query($con,$query);
                     $check_attendance = mysqli_num_rows($query_run) > 0; 
                     if($check_attendance){

@@ -21,7 +21,16 @@ if(!isset($_SESSION["username"]))
     <section id="announcement">
     <div class="back">
             <div class="inn">
-                <p class="backbtn"> <a href="admin2.php"> Go Back to <br>the Admin</a></p>
+            <?php 
+                    include('cgmdbconnection.php');
+                    $dibconfig = mysqli_select_db($con,'cgm');
+
+                        $chapter = $_GET['chapter'];
+                        $name = "SELECT * FROM chapter WHERE id = $chapter";
+                        $name_run = mysqli_query($con, $name);
+                        $row = mysqli_fetch_array($name_run);
+                    ?>
+                <p class="backbtn"> <a href="uploadevent.php?chapter=<?php echo $chapter ?>"> Go Back to <br>the Admin</a></p>
             </div>
         </div>
         <div class="pinakalabas">

@@ -26,7 +26,11 @@ if(!isset($_SESSION["username"]))
         <div class="back">
             <div class="inn">
                 <?php $chapter = $_GET['chapterid']; ?>
-                <a style="text-decoration: none;" class="printbtn" href="chapter_admin.php?chapter=<?php echo $chapter ?>">BACK</a>
+                <a style="text-decoration: none; color: black;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 3px;" class="" href="chapter_admin.php?chapter=<?php echo $chapter ?>">BACK</a>
             </div>
         </div>
         <h1 class="head">Attendance List</h1><hr>

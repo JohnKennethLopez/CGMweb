@@ -28,9 +28,11 @@ if(!isset($_SESSION["username"]))
             <br><h1 class="cgmadmin">CGM ADMIN</h1><br><br>
                     <div class="inner">
                         <div class="dashnav">
+                        <p class="btn"><a href="information.php#upload">Edit Website's Information</a><p>
                         <p class="btn"><a href="appointment_admin.php#Appointment">View Appointment</a><p>
-                        <p class="btn"><a href="viewprayer_admin.php#prayerReq">View Prayer Requests</a><p>
-                            <p class="btn"><a href="attendancelist_admin.php#Attendancelist">View Attendance List</a><p>
+                        <p style="background: linear-gradient(90deg, #2427ff, #020049);" class="btn"><a href="viewprayer_admin.php#prayerReq">View Prayer Requests</a><p>
+                        <p class="btn"><a href="attendancelist_admin.php#Attendancelist">View Attendance List</a><p>    
+                        <p class="btn"><a href="add_user.php#Adduser">Add User</a><p>
                         </div>
                     </div>
             </div>

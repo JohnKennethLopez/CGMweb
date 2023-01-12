@@ -15,13 +15,21 @@ if(!isset($_SESSION["username"]))
     <link rel="stylesheet" href="css/Editabout.css">
 </head>
 <body>
+<?php 
+                    include('cgmdbconnection.php');
+                    $dibconfig = mysqli_select_db($con,'cgm');
 
+                        $chapter = $_GET['chapter'];
+                        $name = "SELECT * FROM chapter WHERE id = $chapter";
+                        $name_run = mysqli_query($con, $name);
+                        $row = mysqli_fetch_array($name_run);
+                    ?>
 <?php
 
-include('cgmdbconnection.php');    
+  
 
-    $id = $_GET['edit'];
-    $sql = "SELECT * FROM gmap WHERE id = $id";
+
+    $sql = "SELECT * FROM gmap WHERE id = $chapter";
     $result = mysqli_query($con, $sql);
     $row = mysqli_fetch_array($result);
 
@@ -40,17 +48,17 @@ include('cgmdbconnection.php');
         $map = $_POST['googlemap'];
         $fb = $_POST['fblink'];
 
-        $query = "UPDATE gmap SET f2fservice='$f2f' , online='$online' , address='$add' , googlemap='$map', fblink = '$fb' where id=$id";
+        $query = "UPDATE gmap SET f2fservice='$f2f' , online='$online' , address='$add' , googlemap='$map', fblink = '$fb' where id=$chapter";
         $query_run = mysqli_query($con,$query);
 
         if($query_run){
             $_SESSION['status'] = "Updated Successfully";
             $_SESSION['status-code'] = "success";
-            header('location:editGmap.php');
+            header("location:editGmap.php?chapter=$chapter");
         }else{
             $_SESSION['status'] = "Something is wrong";
             $_SESSION['status-code'] = "error";
-            header('location:editGmap.php');
+            header("location:editGmap.php?chapter=$chapter");
         }
 
     }
@@ -96,7 +104,7 @@ include('cgmdbconnection.php');
                     <div class="button">
                         <div class="submit">
                             <button name="submitgmap" id="send">UPDATE</button>
-                            <button class="cancel"> <a href="editGmap.php"> CANCEL</a></button>
+                            <button class="cancel"> <a href="editGmap.php?chapter=<?php echo $chapter ?>"> CANCEL</a></button>
                         </div>
                     </div>
                 </div>
@@ -112,20 +120,3 @@ include('cgmdbconnection.php');
 
 </html>
 
-<?php
-if(isset($_SESSION['status']) && $_SESSION['status'] !=''){
-    ?>
-    <script>
-        swal({
-            title: "<?php echo $_SESSION['status']; ?>",
-            // text: "You clicked the button!",
-            icon: "<?php echo $_SESSION['status-code']; ?>",
-            confirmButtonColor: "#020049",
-            confirmButtonText: "Ok",
-
-            });
-    </script>
-    <?php
-    unset($_SESSION['statuss']);
-}
-?>

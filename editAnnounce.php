@@ -18,9 +18,18 @@ if(!isset($_SESSION["username"]))
 </head>
 <body>
     <section id="editevent">
+    <?php 
+                    include('cgmdbconnection.php');
+                    $dibconfig = mysqli_select_db($con,'cgm');
+
+                        $chapter = $_GET['chapter'];
+                        $name = "SELECT * FROM chapter WHERE id = $chapter";
+                        $name_run = mysqli_query($con, $name);
+                        $row = mysqli_fetch_array($name_run);
+                    ?>
         <div class="back">
             <div class="inn">
-                <p class="backbtn"> <a href="admin2.php"> Go Back to <br>the Admin</a></p>
+                <p class="backbtn"> <a href="uploadevent.php?chapter=<?php echo $chapter ?>"> Go Back to <br>the Admin</a></p>
             </div>
         </div>
         <div class="table">
@@ -33,8 +42,7 @@ if(!isset($_SESSION["username"]))
                     <th class="DE">DELETE & EDIT</th>
                 </tr>
                 <?php
-                    include('cgmdbconnection.php');
-                    $dibconfig = mysqli_select_db($con,'cgm');
+                    
                     
                     $query = "SELECT * FROM announcement";
                     $query_run = mysqli_query($con,$query);

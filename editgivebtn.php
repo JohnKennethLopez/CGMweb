@@ -15,13 +15,21 @@ if(!isset($_SESSION["username"]))
     <link rel="stylesheet" href="css/Editabout.css">
 </head>
 <body>
+<?php 
+                    include('cgmdbconnection.php');
+                    $dibconfig = mysqli_select_db($con,'cgm');
 
+                        $chapter = $_GET['chapter'];
+                        $name = "SELECT * FROM chapter WHERE id = $chapter";
+                        $name_run = mysqli_query($con, $name);
+                        $row = mysqli_fetch_array($name_run);
+                    ?>
 <?php
 
-include('cgmdbconnection.php');    
 
-    $id = $_GET['edit'];
-    $sql = "SELECT * FROM give WHERE id = $id";
+
+
+    $sql = "SELECT * FROM give WHERE id = $chapter";
     $result = mysqli_query($con, $sql);
     $row = mysqli_fetch_array($result);
 
@@ -39,17 +47,17 @@ include('cgmdbconnection.php');
         $gform = $_POST['gform'];
 
 
-        $query = "UPDATE give SET des='$des' , method='$method' , gcash='$gcash', gform='$gform' where id=$id";
+        $query = "UPDATE give SET des='$des' , method='$method' , gcash='$gcash', gform='$gform' where id=$chapter";
         $query_run = mysqli_query($con,$query);
 
         if($query_run){
             $_SESSION['status'] = "Updated Successfully";
             $_SESSION['status-code'] = "success";
-            header('location:editgive.php');
+            header("location:editgive.php?chapter=$chapter");
         }else{
             $_SESSION['status'] = "Something is wrong";
             $_SESSION['status-code'] = "error";
-            header('location:editgive.php');
+            header("location:editgive.php?chapter=$chapter");
         }
 
     }
@@ -90,7 +98,7 @@ include('cgmdbconnection.php');
                     <div class="button">
                         <div class="submit">
                             <button name="submitgive" id="send">UPDATE</button>
-                            <button class="cancel"> <a href="editgive.php"> CANCEL</a></button>
+                            <button class="cancel"> <a href="editgive.php?chapter=<?php echo $chapter ?>"> CANCEL</a></button>
                         </div>
                     </div>
                 </div>

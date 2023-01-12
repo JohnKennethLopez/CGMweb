@@ -16,11 +16,11 @@ include('cgmdbconnection.php');
         if($query_run){
             $_SESSION['status'] = "Post Successfully";
             $_SESSION['status-code'] = "success";
-            header("location:admin2.php");
+            header("location:add_user.php");
         }else{
             $_SESSION['status'] = "Something is wrong";
             $_SESSION['status-code'] = "error";
-            header("location:admin2.php");
+            header("location:add_user.php");
         }
 
     }

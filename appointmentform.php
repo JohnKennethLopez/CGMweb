@@ -66,9 +66,7 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
                 $week .= '<td class="today">' . $day. '<br><button type="button" class="btn btn-danger" disabled>Fully Booked</button>';
         } else {
             $week .= '<td class="today">' . $day. '<br><button type="button" name="book" class="btn btn-info" data-toggle="modal" data-target="#my-modal"><a href="?chapter=' . $chapter . '&date=' . $date . '#myModal">Book</a></button>';}
-    } 
-    
-    else{
+        } else {
         $query = "SELECT date, count(*) AS total FROM appointment WHERE date = '$date' AND cgm_id = '$chapter' AND status = 'Confirmed'";
         $query_run = mysqli_query($con, $query);
         $date_count = mysqli_num_rows($query_run);
@@ -76,10 +74,17 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
 
         $total = $row['total'];
 
-            if($total === '5'){
-                    $week .= '<td>' . $day. '<br><button type="button" class="btn btn-danger" disabled>Fully Booked</button>';
-            } else {
-                $week .= '<td>' . $day. '<br><button type="button" name="book" class="btn btn-info" data-toggle="modal" data-target="#my-modal"><a href="?chapter=' . $chapter . '&date=' . $date . '#myModal">Book</a></button>';}
+        $curdate = date("Y-m-d");
+        if ($total === '5') {
+
+            $week .= '<td>' . $day . '<br><button type="button" class="btn btn-danger" disabled>Fully Booked</button>';
+        }
+         else {
+
+            $week .= '<td>' . $day . '<br><button type="button" name="book" class="btn btn-info" data-toggle="modal" data-target="#my-modal"><a href="?chapter=' . $chapter . '&date=' . $date . '#myModal">Book</a></button>';
+
+        }
+
         }
         
     
@@ -196,13 +201,13 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
                 </div>
         <table class="table table-bordered">
             <tr>
-                <th>S</th>
-                <th>M</th>
-                <th>T</th>
-                <th>W</th>
-                <th>T</th>
-                <th>F</th>
-                <th>S</th>
+                <th>Sunday</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
             </tr>
             <?php
                 foreach ($weeks as $week) {
@@ -218,7 +223,7 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
    <div class="modal-dialog" role="document" style="z-index: 35500;">
       <div class="modal-content">
          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
             <h4 class="modal-title">Appointment Form</h4>
          </div>
          <div class="modal-body">
@@ -255,7 +260,7 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
                                 $checktime = "SELECT * FROM appointment WHERE date = '$getdate' AND cgm_id = '$chapter' AND time = '11:00 AM - 12:00 PM' AND status = 'Confirmed'";
                                 $checktime_run = mysqli_query($con, $checktime);
                                 $row = mysqli_num_rows($checktime_run);
-                                // $total = $row['total'];
+ 
                                 if($row === 1) {?> hidden <?php } ?>
                                 >11:00 AM - 12:00 PM</option>
 
@@ -302,6 +307,7 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
                         <div class="INP">
                             <label for="email">Email:</label>
                             <input type="email" class="email" name="email" placeholder="Enter your Email" required>
+                            <p class="note">Note: Please Enter a valid or working EMAIL(gmail).</p>
                         </div>
                         <div class="INP">
                             <label for="contact">Contact Number:</label>

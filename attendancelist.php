@@ -33,7 +33,7 @@ if(!isset($_SESSION["username"]))
                             <p class="btn"><a href="appointment.php?chapter=<?php echo $chapter ?>#Appointment">View Appointment</a><p>
                             <p class="btn"><a href="viewprayer.php?chapter=<?php echo $chapter ?>#prayerReq">View Prayer Requests</a><p>
                             <p class="btn"><a href="attendance.php?chapter=<?php echo $chapter ?>#attendance">Attendance</a><p>
-                            <p class="btn"><a href="attendancelist.php?chapter=<?php echo $chapter ?>#Attendancelist">View Attendance List</a><p>
+                            <p style="background: linear-gradient(90deg, #2427ff, #020049);" class="btn"><a href="attendancelist.php?chapter=<?php echo $chapter ?>#Attendancelist">View Attendance List</a><p>
                         </div>
                     </div>
             </div>
@@ -46,7 +46,7 @@ if(!isset($_SESSION["username"]))
         <div class="labas">
             <div class="filter">
                 <div class="inn">
-                    <p class="backbtn"><a href="search.php?chapterid=<?php echo $chapter ?>">Filter the Date and <br>CGM CHAPTER</a></p>
+                    <p class="backbtn"><a href="search.php?chapterid=<?php echo $chapter ?>">Filter the Date</a></p>
                 </div>
             </div>
             <div class="print">

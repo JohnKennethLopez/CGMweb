@@ -29,7 +29,7 @@ if(!isset($_SESSION["username"]))
             <div class="print">
                 <div class="inn">
                     <button onclick="window.print()" class="printbtn">PRINT  <i class="fa-solid fa-print"></i></button>
-                    <button class="printbtn"><a href="admin2.php">BACK</a></button>
+                    <button class="printbtn" onclick="history.back()">BACK</button>
                 </div>
             </div>
         </div>

@@ -35,7 +35,7 @@ if(!isset($_SESSION["username"]))
                     <div class="inner">
                         <div class="dashnav">
 
-                            <p class="btn"><a href="uploadevent.php?chapter=<?php echo $chapter ?>#upload">Upload Events</a></p>
+                            <p style="background: linear-gradient(90deg, #2427ff, #020049);" class="btn"><a href="uploadevent.php?chapter=<?php echo $chapter ?>#upload">Upload Events</a></p>
                             <p class="btn"><a href="appointment.php?chapter=<?php echo $chapter ?>#Appointment">View Appointment</a><p>
                             <p class="btn"><a href="viewprayer.php?chapter=<?php echo $chapter ?>#prayerReq">View Prayer Requests</a><p>
                             <p class="btn"><a href="attendance.php?chapter=<?php echo $chapter ?>#attendance">Attendance</a><p>
@@ -108,52 +108,36 @@ if(!isset($_SESSION["username"]))
                 <div class="edit">
                     <div class="uplAnnounce">
                         <div class="inside">
-                            <p class="editbtn"><a href="uploadannouncement.php">Upload an ANNOUNCEMENT</a></p>
+                            <p class="editbtn"><a href="uploadannouncement.php?chapter=<?php echo $chapter ?>">Upload an ANNOUNCEMENT</a></p>
                         </div>
                     </div>
                     <div class="editevent">
                         <div class="inside">
-                            <p class="editbtn"><a href="editEvent.php">Edit Posted<br>Events</a></p>
+                            <p class="editbtn"><a href="editEvent.php?chapter=<?php echo $chapter ?>">Edit Posted<br>Events</a></p>
                         </div>
                     </div>
-                    <div class="homepic">
-                        <div class="inside">
-                            <p class="editbtn"><a href="editHomePic.php">Edit Home pages Pictures</a></p>
-                        </div>
-                    </div>
+                    
                     <div class="editann">
                         <div class="inside">
-                            <p class="editbtn"><a href="editAnnounce.php">Edit Posted Announcement</a></p>
+                            <p class="editbtn"><a href="editAnnounce.php?chapter=<?php echo $chapter ?>">Edit Posted Announcement</a></p>
                         </div>
                     </div>
-                    <div class="editabout">
-                        <div class="inside">
-                            <p class="editbtn"><a href="editAbout.php">Edit<br>About</a></p>
-                        </div>
-                    </div>
+                    
                     <div class="editgmap">
                         <div class="inside">
-                            <p class="editbtn"><a href="editGmap.php">Edit Google<br>Map</a></p>
+                            <p class="editbtn"><a href="editGmap.php?chapter=<?php echo $chapter ?>">Edit Google<br>Map</a></p>
                         </div>
                     </div>
-                    <div class="editCM">
-                        <div class="inside">
-                            <p class="editbtn"><a href="editCM.php">Edit Councile & Ministry</a></p>
-                        </div>
-                    </div>
+                    
                     <div class="editprog">
                         <div class="inside">
-                            <p class="editbtn"><a href="editprog.php">Edit Live stream<br>Iframe</a></p>
+                            <p class="editbtn"><a href="editprog.php?chapter=<?php echo $chapter ?>">Edit Live stream<br>Iframe</a></p>
                         </div>
                     </div>
-                    <div class="editmisser">
-                        <div class="inside">
-                            <p class="editbtn"><a href="editmisser.php">Edit<br>Mission & Service</a></p>
-                        </div>
-                    </div>
+                    
                     <div class="editgive">
                         <div class="inside">
-                            <p class="editbtn"><a href="editgive.php">Edit Give<br>Information</a></p>
+                            <p class="editbtn"><a href="editgive.php?chapter=<?php echo $chapter ?>">Edit Give<br>Information</a></p>
                         </div>
                     </div>
                 </div>

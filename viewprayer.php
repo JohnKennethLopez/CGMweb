@@ -34,7 +34,7 @@ if(!isset($_SESSION["username"]))
                         <div class="dashnav">
                             <p class="btn"><a href="uploadevent.php?chapter=<?php echo $chapter ?>#upload">Upload Events</a></p>
                             <p class="btn"><a href="appointment.php?chapter=<?php echo $chapter ?>#Appointment">View Appointment</a><p>
-                            <p class="btn"><a href="viewprayer.php?chapter=<?php echo $chapter ?>#prayerReq">View Prayer Requests</a><p>
+                            <p style="background: linear-gradient(90deg, #2427ff, #020049);" class="btn"><a href="viewprayer.php?chapter=<?php echo $chapter ?>#prayerReq">View Prayer Requests</a><p>
                             <p class="btn"><a href="attendance.php?chapter=<?php echo $chapter ?>#attendance">Attendance</a><p>
                             <p class="btn"><a href="attendancelist.php?chapter=<?php echo $chapter ?>#Attendancelist">View Attendance List</a><p>
                         </div>
@@ -49,14 +49,10 @@ if(!isset($_SESSION["username"]))
         <div class="labas">
             <div class="filter">
                 <div class="inn">
-                    <p class="backbtn"><a href="searchpray.php?chapter=<?php echo $chapter ?>">Filter the<br>CGM CHAPTER</a></p>
+                <p class="printbtn"><a href="printpray.php">Print Prayer<br>Request/Reports List</a></p>
                 </div>
             </div>
-            <div class="print">
-                <div class="pr">
-                    <p class="printbtn"><a href="printpray.php">Print Prayer<br>Request/Reports List</a></p>
-                </div>
-            </div>
+            
         </div>
         <div class="table">
             <table class="tablecont">

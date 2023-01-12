@@ -17,10 +17,19 @@ if(!isset($_SESSION["username"]))
 </head>
 <body>
     <section id="editevent">
+        <?php 
+                    include('cgmdbconnection.php');
+                    $dibconfig = mysqli_select_db($con,'cgm');
+
+                        $chapter = $_GET['chapter'];
+                        $name = "SELECT * FROM chapter WHERE id = $chapter";
+                        $name_run = mysqli_query($con, $name);
+                        $row = mysqli_fetch_array($name_run);
+                    ?>
         <div class="labasbtn">
                 <div class="back">
                     <div class="inn">
-                        <p class="backbtn"> <a href="admin2.php"> Go Back to <br>the Admin</a></p>
+                        <p class="backbtn"> <a href="uploadevent.php?chapter=<?php echo $chapter ?>"> Go Back to <br>the Admin</a></p>
                     </div>
                 </div>
                 <div class="mm">
@@ -42,11 +51,10 @@ if(!isset($_SESSION["username"]))
                     <th>Live Stream Replay Iframe</th>
                     <th class="DE">EDIT</th>
                 </tr>
+                
                 <?php
-                    include('cgmdbconnection.php');
-                    $dibconfig = mysqli_select_db($con,'cgm');
                     
-                    $query = "SELECT * FROM stream";
+                    $query = "SELECT * FROM stream WHERE id = $chapter";
                     $query_run = mysqli_query($con,$query);
                     $check_attendance = mysqli_num_rows($query_run) > 0; 
                     if($check_attendance){
@@ -56,7 +64,7 @@ if(!isset($_SESSION["username"]))
                         <td><?php echo $row['cgmchapter']?></td>
                         <td><?php echo $row['live']?></td>
                         
-                        <td><a href="Editprogbtn.php?edit=<?php echo $row['id']; ?>"><button class="edit">edit</button></a></td>
+                        <td><a href="Editprogbtn.php?chapter=<?php echo $chapter ?>"><button class="edit">edit</button></a></td>
                     </tr>
                     <?php
                         }

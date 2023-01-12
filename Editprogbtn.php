@@ -16,12 +16,22 @@ if(!isset($_SESSION["username"]))
 </head>
 <body>
 
+                    
+<?php 
+                    include('cgmdbconnection.php');
+                    $dibconfig = mysqli_select_db($con,'cgm');
+
+                        $chapter = $_GET['chapter'];
+                        $name = "SELECT * FROM chapter WHERE id = $chapter";
+                        $name_run = mysqli_query($con, $name);
+                        $row = mysqli_fetch_array($name_run);
+                    ?>
 <?php
 
-include('cgmdbconnection.php');    
+  
 
-    $id = $_GET['edit'];
-    $sql = "SELECT * FROM stream WHERE id = $id";
+    
+    $sql = "SELECT * FROM stream WHERE id = $chapter";
     $result = mysqli_query($con, $sql);
     $row = mysqli_fetch_array($result);
 
@@ -35,17 +45,17 @@ include('cgmdbconnection.php');
         $live = $_POST['live'];
         $title = $_POST['title'];
 
-        $query = "UPDATE stream SET live='$live', title='$title' where id=$id";
+        $query = "UPDATE stream SET live='$live', title='$title' where id=$chapter";
         $query_run = mysqli_query($con,$query);
 
         if($query_run){
             $_SESSION['status'] = "Updated Successfully";
             $_SESSION['status-code'] = "success";
-            header('location:editprog.php');
+            header("location:editprog.php?chapter=$chapter");
         }else{
             $_SESSION['status'] = "Something is wrong";
             $_SESSION['status-code'] = "error";
-            header('location:editprog.php');
+            header("location:editprog.php?chapter=$chapter");
         }
 
     }
@@ -75,7 +85,7 @@ include('cgmdbconnection.php');
                     <div class="button">
                         <div class="submit">
                             <button name="submitlive" id="send">UPDATE</button>
-                            <button class="cancel"> <a href="editprog.php"> CANCEL</a></button>
+                            <button class="cancel"> <a href="editprog.php?chapter=<?php echo $chapter ?>"> CANCEL</a></button>
                         </div>
                     </div>
                 </div>

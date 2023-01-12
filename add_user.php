@@ -15,7 +15,7 @@ if(!isset($_SESSION["username"]))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CGM</title>
     <link rel="shortcut icon" type="image/png" href="css/image/icon.png">
-    <link rel="stylesheet" href="css/upevent.css">
+    <link rel="stylesheet" href="css/adduser.css">
     <script src="JavaScript/upload.js" defer></script>
     <script src="JavaScript/announcepic.js" defer></script>
 </head>
@@ -30,18 +30,18 @@ if(!isset($_SESSION["username"]))
                     <div class="inner">
                         <div class="dashnav">
 
-                            <p class="btn"><a href="uploadevent.php?chapter=<?php echo $chapter ?>#upload">Upload Events</a></p>
-                            <p class="btn"><a href="appointment.php?chapter=<?php echo $chapter ?>#Appointment">View Appointment</a><p>
-                            <p class="btn"><a href="viewprayer.php?chapter=<?php echo $chapter ?>#prayerReq">View Prayer Requests</a><p>
-                            <p class="btn"><a href="attendance.php?chapter=<?php echo $chapter ?>#attendance">Attendance</a><p>
-                            <p class="btn"><a href="attendancelist.php?chapter=<?php echo $chapter ?>#Attendancelist">View Attendance List</a><p>
+                        <p class="btn"><a href="information.php#upload">Edit Website's Information</a><p>
+                        <p class="btn"><a href="appointment_admin.php#Appointment">View Appointment</a><p>
+                        <p class="btn"><a href="viewprayer_admin.php#prayerReq">View Prayer Requests</a><p>
+                        <p class="btn"><a href="attendancelist_admin.php#Attendancelist">View Attendance List</a><p>    
+                        <p style="background: linear-gradient(90deg, #2427ff, #020049);" class="btn"><a href="add_user.php#Adduser">Add User</a><p>    
                         </div>
                     </div>
             </div>
         </div>
         <button class="logout"><a href="logout.php">Logout</a></button>
                 <hr />
-              
+                <h1 class="uplaodevent">Add New User</h1>
     </section>
     <section id="Adduser">
         <div class="pinakalabas">
@@ -61,6 +61,7 @@ if(!isset($_SESSION["username"]))
                     <div class="isang">
                         <label for="loc">Level:</label>
                         <input type="text" name="level" placeholder="Access Level">
+                        <p class="note">Note: 1(one) for ADMIN & 0(zero) for Other chapters </p>
                     </div>
                     <div class="isang">
                     <label for="loc">Chapter:</label>
