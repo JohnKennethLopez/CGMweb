@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#announcement {
+    background: url("image/wwww.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 8rem;
+}
+.h1up {
+    background: linear-gradient(145deg, #020049, #2427ff);
+    color: white;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    border-radius: 15px;
+    letter-spacing: 5px;
+}
+.back {
+    position: relative;
+    top: 1rem;
+    border: 0px solid black;
+    background: linear-gradient(180deg, #020049, #2427ff);
+    padding: 10px;
+    width: 200px;
+    border-radius: 0 15px 15px 0;
+    margin-left: 2%;
+}
+.inn {
+    border: 0px solid black;
+    background: #e6e6e6;
+    padding: 10px;
+    border-radius: 0 15px 15px 0;
+    text-align: center;
+}
+.backbtn a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+.container .wrapper {
+    height: 180px;
+    position: relative;
+    border: 1px dashed black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.wrapper.active {
+    border: none;
+}
+.wrapper .upimg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper .upimg img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.wrapper #cancel {
+    display: none;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+}
+.wrapper #cancel:hover {
+    width: 18px;
+}
+.wrapper.active:hover #cancel {
+    display: block;
+}
+.wrapper.active:hover .file-name {
+    display: block;
+}
+.wrapper .file-name {
+    display: none;
+    position: absolute;
+    bottom: 0px;
+    letter-spacing: 3px;
+    color: white;
+    padding: 5px;
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(145deg, #020049, #2427ff);
+}
+.container #custom-btn{
+    margin-top: 10px;
+    width: 100%;
+    display: block;
+    border: none;
+    padding: 5px;
+    outline: none;
+    color: white;
+    background: linear-gradient(145deg, #020049, #2427ff);
+    font-family: 'Orbitron', sans-serif;
+    border-radius: 5px;
+    text-align: center;
+    cursor:pointer;
+}
+.container #custom-btn:hover{
+    background: linear-gradient(90deg, #2427ff, #020049);
+}
+.pinakalabas {
+    position: relative;
+    top: 5rem;
+    background: linear-gradient(145deg, #020049, #2427ff);
+    font-family: 'Orbitron', sans-serif;
+    border: 0 solid black;
+    border-radius: 0 0 20px 20px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3rem;
+    box-shadow: 5px 30px 40px rgba(0, 0, 0, 1);
+}
+.labas {
+    border: 0 solid black;
+    border-radius: 20px 20px 0 0;
+    background: #e6e6e6;
+    padding: 2rem;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.8);
+}
+.labass {
+    border: 0 solid black;
+    border-radius: 0 0 20px 20px;
+    background: #e6e6e6;
+    padding: 2rem;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.8);
+}
+.loob {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.iisang {
+    width: calc(100% / 2 - 20px);
+    margin: 20px 0 10px 0;
+}
+.iisang input {
+    height: 45px;
+    width: 100%;
+    font-family: 'Orbitron', sans-serif;
+}
+.isang {
+    width: calc(100% / 2 - 20px);
+    margin: 20px 0 10px 0;
+}
+.isang input {
+    height: 45px;
+    width: 100%;
+    font-size: 17px;
+    letter-spacing: 3px;
+    color: black;
+    border-color: black;
+    font-family: 'Orbitron', sans-serif;
+    padding: 5px 5px 5px 15px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-bottom-width: 3px ;
+    transition: all 0.5s ease;
+}
+.isang input:focus {
+    border-color: #020049;
+}
+.isang select {
+    height: 45px;
+    width: 100%;
+}
+.isang select:focus {
+    border-color: #020049;
+}
+.isang textarea {
+    height: 100px;
+    width: 100%;
+}
+.isang textarea:focus {
+    border-color: #020049;
+}
+.pinakalabas textarea {
+    font-size: 17px;
+    letter-spacing: 3px;
+    color: black;
+    border-color: black;
+    font-family: 'Orbitron', sans-serif;
+    padding: 5px 5px 5px 15px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-bottom-width: 3px ;
+    transition: all 0.5s ease;
+}
+.pinakalabas select {
+    font-size: 15px;
+    letter-spacing: 3px;
+    color: black;
+    border-color: black;
+    font-family: 'Orbitron', sans-serif;
+    padding: 5px 5px 5px 15px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-bottom-width: 3px ;
+    transition: all 0.5s ease;
+}
+#send {
+    font-size: 17px;
+    letter-spacing: 3px;
+    color: black;
+    border-color: black;
+    font-family: 'Orbitron', sans-serif;
+    padding: 5px 5px 5px 15px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-bottom-width: 3px ;
+    transition: all 0.5s ease;
+    width: 100%;
+    height: 45px;
+    margin: 40px 35% 5px 35%;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #2427ff, #020049);
+    color: white;
+}
+#send:hover {
+    background: linear-gradient(180deg, #020049, #2427ff);
+}

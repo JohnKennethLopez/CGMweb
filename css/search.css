@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@700&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#editevent {
+    background: url("./image/wwww.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 6rem;
+}
+.header {
+    text-align: center;
+}
+.lg {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+.cgm {
+    display: none;
+    justify-content: center;
+    margin-bottom: 5%;
+    font-size: 25px;
+}
+.back {
+    position: relative;
+    top: 1rem;
+    border: 0px solid black;
+    background: linear-gradient(180deg, #020049, #2427ff);
+    padding: 10px;
+    width: 200px;
+    border-radius: 0 15px 15px 0;
+    margin-left: 2%;
+}
+.inn {
+    border: 0px solid black;
+    background: #e6e6e6;
+    padding: 10px;
+    border-radius: 0 15px 15px 0;
+    text-align: center;
+}
+.backbtn a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+.head {
+    text-align: center;
+    font-family: 'Carter One', cursive;
+    letter-spacing: 3px;
+    font-size: 30px;
+    text-shadow: 1px 10px 10px rgba(0, 0, 0, 0.7);
+}
+hr {
+    margin: 1rem 5% 2rem 5%;
+    height: 5px;
+    background: #2427ff;
+}
+.filterpart {
+    text-align: center;
+    display: grid;
+}
+.filter select {
+    font-size: 15px;
+    letter-spacing: 3px;
+    color: black;
+    border-color: black;
+    font-family: 'Orbitron', sans-serif;
+    padding: 5px 5px 5px 15px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-bottom-width: 3px ;
+    transition: all 0.5s ease;
+    margin-bottom: 1rem;
+    box-shadow: 1px 5px 20px rgba(0, 0, 0, 0.7);
+}
+.filter select:focus {
+    border-color: #020049;
+}
+.filter input {
+    font-size: 17px;
+    letter-spacing: 3px;
+    color: black;
+    border-color: black;
+    font-family: 'Orbitron', sans-serif;
+    padding: 5px 5px 5px 15px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-bottom-width: 3px ;
+    transition: all 0.5s ease;
+    margin-bottom: 1rem;
+    box-shadow: 1px 5px 20px rgba(0, 0, 0, 0.7);
+}
+.filter input:focus {
+    border-color: #020049;
+}
+.filterbtn {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 3px;
+    padding: 5px 1.5rem;
+    font-size: 15px;
+    border: 0px;
+    border-radius: 5px;
+    background: #2427ff;
+    cursor: pointer;
+    color: white;
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.7);
+}
+.filterbtn:hover {
+    background: #020049;
+}
+.printbtn {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 3px;
+    padding: 5px 1.5rem;
+    font-size: 15px;
+    border: 0px;
+    border-radius: 5px;
+    background: #2427ff;
+    cursor: pointer;
+    color: white;
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.7);
+}
+.printbtn:hover {
+    background: #020049;
+}
+.totalattend {
+    border: 1px solid black;
+    background: #a8a8a8;
+    width:fit-content;
+    margin-top: 10px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+.total {
+    text-align: center;
+    padding: 5px 2rem 5px 2rem;
+    letter-spacing: 5px;
+    font-family: 'Hind Madurai', sans-serif;
+}
+@media print {
+    .filter, .filter *{
+        display: none;
+    }
+    .back, .back *{
+        display: none;
+    }
+    
+}
+.date_label {
+    font-family: 'Carter One', cursive;
+}
+.datefilter {
+    display: flex;
+    justify-content: center;
+}
+.fromdate{
+    margin-right: 5px;
+}
+.todate {
+    margin-left: 5px;
+}
+/*TABLE*/
+.tablecont {
+    font-family: 'Signika Negative', sans-serif;
+    border-collapse: collapse;
+    border-radius: 0;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: none;
+}
+td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px;
+    background: #dfdfdf;
+    font-weight: bolder;
+}
+.table th {
+    border: 1px solid black;
+    text-align: center;
+    letter-spacing: 0px;
+    padding: 5px;
+    color: black;
+    box-shadow: none;
+    background: #838383;
+}
