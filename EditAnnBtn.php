@@ -15,17 +15,25 @@ if(!isset($_SESSION["username"]))
     <link rel="stylesheet" href="css/Editbtn.css">
 </head>
 <body>
+<?php 
+                    include('cgmdbconnection.php');
+                    $dibconfig = mysqli_select_db($con,'cgm');
 
+                        $chapter = $_GET['chapter'];
+                        $name = "SELECT * FROM chapter WHERE id = $chapter";
+                        $name_run = mysqli_query($con, $name);
+                        
+                    ?>
 <?php
 
-include('cgmdbconnection.php');    
+   
 
     $id = $_GET['edit'];
     $sql = "SELECT * FROM announcement WHERE id = $id";
     $result = mysqli_query($con, $sql);
     $row = mysqli_fetch_array($result);
     $img = $row['img'];
-    $chapter = $row['cgmchapter'];
+    $chapterr = $row['cgmchapter'];
     $anntitle = $row['announceTitle'];
     $caption = $row['caption'];
 
@@ -48,11 +56,11 @@ include('cgmdbconnection.php');
         if($query_run){
             $_SESSION['status'] = "Post Successfully";
             $_SESSION['status-code'] = "success";
-            header('location:editAnnounce.php');
+            header("location:editAnnounce.php?chapter= $chapter ");
         }else{
             $_SESSION['status'] = "Something is wrong";
             $_SESSION['status-code'] = "error";
-            header('location:editAnnounce.php');
+            header("location:editAnnounce.php?chapter= $chapter ");
         }
 
     }
@@ -71,11 +79,12 @@ include('cgmdbconnection.php');
                 <div class="iisang">
                         <label for="img">Add Image:</label>
                         <input value="" type="file" name="img"><img src="<?php echo $img; ?>" alt="" width="100px">
-                    </div>
+                        <p class="note">Note: Please Select again the same picture, If you do not intend to edit it. </p>
+                    </div>  
                     <div class="isang">
                         <label for="church">CGM Chapter</label>
                             <select name="cgmchapter" id="church" required value="">
-                                <option value="<?php echo $chapter; ?>" disabled selected><?php echo $chapter; ?></option>
+                                <option value="<?php echo $chapterr; ?>" disabled selected><?php echo $chapterr; ?></option>
                                     <option value="CGM Las Piñas Main">CGM Las Piñas Main</option>
                                     <option value="CGM Bacoor, Cavite">CGM Bacoor, Cavite</option>
                                     <option value="CGM Balete, Batangas">CGM Balete, Batangas</option>
@@ -97,6 +106,7 @@ include('cgmdbconnection.php');
                                     <option value="CGM Taguig City">CGM Taguig City</option>
                                     <option value="CGM Gen. Tinio, Nueva Ecija">CGM Tinio, Nueva Ecija</option>
                             </select>
+                            <p class="note">Note: Please Select again the same Chapter, If you do not intend to edit it. </p>
                     </div>
                     <div class="isang">
                         <label for="announceTitle">Announcement Title:</label>
@@ -109,7 +119,7 @@ include('cgmdbconnection.php');
                     <div class="button">
                         <div class="submit">
                             <button name="submitannounce" id="send">UPDATE</button>
-                            <button class="cancel"> <a href="editAnnounce.php"> CANCEL</a></button>
+                            <button class="cancel"> <a href="editAnnounce.php?chapter=<?php echo $chapter ?>"> CANCEL</a></button>
                         </div>
                     </div>
                 </div>

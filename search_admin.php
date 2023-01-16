@@ -25,7 +25,11 @@ if(!isset($_SESSION["username"]))
         </div>
         <div class="back">
             <div class="inn">
-            <a style="text-decoration: none;" class="printbtn" href="admin2.php">BACK</a>
+            <a style="text-decoration: none; color: black;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 3px;" class="" href="admin2.php">BACK</a>
             </div>
         </div>
         <h1 class="head">Attendance List</h1><hr>

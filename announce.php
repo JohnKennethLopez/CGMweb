@@ -21,11 +21,11 @@ include('cgmdbconnection.php');
         if($query_run){
             $_SESSION['status'] = "Post Successfully";
             $_SESSION['status-code'] = "success";
-            header('location:uploadevent.php');
+            header("location:uploadevent.php?chapter=$chapter");
         }else{
             $_SESSION['status'] = "Something is wrong";
             $_SESSION['status-code'] = "error";
-            header('location:uploadevent.php');
+            header("location:uploadevent.php?chapter=$chapter");
         }
 
     }

@@ -55,7 +55,7 @@ if(!isset($_SESSION["username"]))
                         <td><?php echo $row['cgmchapter']?></td>
                         <td><?php echo $row['announceTitle']?></td>
                         <td><?php echo $row['caption']?></td>
-                        <td><a href="EditAnnBtn.php?edit=<?php echo $row['id']; ?>"><button class="edit">edit</button></a><input type="hidden" class="delete_id_value " value="<?php echo $row['id']?>">
+                        <td><a href="EditAnnBtn.php?edit=<?php echo $row['id']; ?>&chapter=<?php echo $chapter ?>"><button class="edit">edit</button></a><input type="hidden" class="delete_id_value " value="<?php echo $row['id']?>">
                         <a href="javascript:void(0)" class="delete_btn_ajax delete-btn">Delete</a></td>
                     </tr>
                     <?php

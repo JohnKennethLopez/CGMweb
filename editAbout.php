@@ -71,7 +71,7 @@ include('cgmdbconnection.php');
                     <div class="button">
                         <div class="submit">
                             <button name="submitabout" id="send">UPDATE</button>
-                            <button class="cancel"> <a href="uploadevent.php"> CANCEL</a></button>
+                            <button class="cancel"> <a href="admin2.php"> CANCEL</a></button>
                         </div>
                     </div>
                 </div>

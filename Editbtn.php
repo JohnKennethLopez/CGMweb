@@ -15,10 +15,17 @@ if(!isset($_SESSION["username"]))
     <link rel="stylesheet" href="css/Editbtn.css">
 </head>
 <body>
+<?php 
+                    include('cgmdbconnection.php');
+                    $dibconfig = mysqli_select_db($con,'cgm');
 
+                        $chapter = $_GET['chapter'];
+                        $name = "SELECT * FROM chapter WHERE id = $chapter";
+                        $name_run = mysqli_query($con, $name);
+                        $row = mysqli_fetch_array($name_run);
+                    ?>
 <?php
-
-include('cgmdbconnection.php');    
+  
 
     $id = $_GET['edit'];
     $sql = "SELECT * FROM upcoming WHERE id = $id";
@@ -52,11 +59,11 @@ include('cgmdbconnection.php');
         if($query_run){
             $_SESSION['status'] = "Updated Successfully";
             $_SESSION['status-code'] = "success";
-            header('location:editEvent.php');
+            header("location:editEvent.php?chapter= $chapter ");
         }else{
             $_SESSION['status'] = "Something is wrong";
             $_SESSION['status-code'] = "error";
-            header('location:editEvent.php');
+            header("location:editEvent.php?chapter= $chapter ");
         }
 
     }
@@ -101,7 +108,7 @@ include('cgmdbconnection.php');
                     <div class="button">
                         <div class="submit">
                             <button name="submitevent" id="send">UPDATE</button>
-                            <button class="cancel"> <a href="editEvent.php"> CANCEL</a></button>
+                            <button class="cancel"> <a href="editEvent.php?chapter=<?php echo $chapter ?>"> CANCEL</a></button>
                         </div>
                     </div>
                 </div>

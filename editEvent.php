@@ -25,7 +25,7 @@ if(!isset($_SESSION["username"]))
                         $chapter = $_GET['chapter'];
                         $name = "SELECT * FROM chapter WHERE id = $chapter";
                         $name_run = mysqli_query($con, $name);
-                        $row = mysqli_fetch_array($name_run);
+                        
                     ?>
         <div class="back">
             <div class="inn">
@@ -60,7 +60,7 @@ if(!isset($_SESSION["username"]))
                         <td><?php echo $row['date']?></td>
                         <td><?php echo $row['time']?></td>
                         <td><?php echo $row['loc']?></td>
-                        <td><a href="Editbtn.php?edit=<?php echo $row['id']; ?>"><button class="edit">edit</button></a><input type="hidden" class="delete_id_value " value="<?php echo $row['id']?>">
+                        <td><a href="Editbtn.php?edit=<?php echo $row['id']; ?>&chapter=<?php echo $chapter ?>"><button class="edit">edit</button></a><input type="hidden" class="delete_id_value " value="<?php echo $row['id']?>">
                         <a href="javascript:void(0)" class="delete_btn_ajax delete-btn">Delete</a></td>
                     </tr>
                     <?php

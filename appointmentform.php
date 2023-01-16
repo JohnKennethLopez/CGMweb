@@ -78,6 +78,8 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
         if ($total === '5') {
 
             $week .= '<td>' . $day . '<br><button type="button" class="btn btn-danger" disabled>Fully Booked</button>';
+        }elseif($date<date('Y-m-d')){
+            $week .= '<td>' . $day . '<br><button type="button" class="btn btn-danger" disabled>N/A</button>';
         }
          else {
 

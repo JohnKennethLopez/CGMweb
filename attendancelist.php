@@ -75,7 +75,7 @@ if(!isset($_SESSION["username"]))
                     
                     
 
-                    $query = "SELECT * FROM attendance WHERE cgm_id = $chapter";
+                    $query = "SELECT * FROM attendance WHERE cgm_id = $chapter ORDER BY id DESC";
                     $query_run = mysqli_query($con,$query);
                     $check_attendance = mysqli_num_rows($query_run) > 0; 
                     if($check_attendance){
