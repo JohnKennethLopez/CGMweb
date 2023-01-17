@@ -42,7 +42,7 @@ if(!isset($_SESSION["username"]))
         <div class="labas">
             <div class="filter">
                 <div class="inn">
-                    <p class="backbtn"><a href="search_admin.php">Filter the Date and <br>CGM CHAPTER</a></p>
+                    <p class="backbtn"><a href="search_admin.php">Filter the Date</a></p>
                 </div>
             </div>
             <div class="print">

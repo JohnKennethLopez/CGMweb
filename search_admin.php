@@ -36,18 +36,7 @@ if(!isset($_SESSION["username"]))
             <div class="filterpart">
                 <form action="" method="GET">
                     <div class="filter">
-                            <select name="chapter" id="church" >
-                            <option value="select" disabled selected>Choose a CGM Church</option>
-                        <?php
-                        $chapter = "SELECT * FROM chapter";
-                        $chapter_run = mysqli_query($con, $chapter);
-
-                        while($row = mysqli_fetch_array($chapter_run)){
-
-                        ?>
-                        <option value="<?php echo $row['id'] ?>"><?php echo $row['cgmchapter'] ?></option>
-                        <?php } ?>
-                            </select><br>
+                            
                             <div class="datefilter">
                                 <div class="fromdate">
                                     <label class="date_label" for="from_date">From Date:</label><br>
@@ -80,17 +69,17 @@ if(!isset($_SESSION["username"]))
                     include('cgmdbconnection.php');
                     $dibconfig = mysqli_select_db($con,'cgm');
                     
-                    if(isset($_GET['chapter']))
+                    if(isset($_GET['from_date']))
                     {
                         
-                        $chapter = $_GET['chapter'];
+                        
                         $from_date = $_GET['from_date'];
                         $to_date = $_GET['to_date'];
                         $new_from_date = date("Y/m/d", strtotime($from_date));
                         $new_to_date = date("Y/m/d", strtotime($to_date));
                         
 
-                        $query = "SELECT * FROM attendance WHERE cgm_id='$chapter' AND date BETWEEN '$new_from_date' AND '$new_to_date' ";
+                        $query = "SELECT * FROM attendance WHERE date BETWEEN '$new_from_date' AND '$new_to_date' ";
                         $query_run = mysqli_query($con,$query);
                         $count = mysqli_num_rows($query_run);
                         if(mysqli_num_rows($query_run) > 0)

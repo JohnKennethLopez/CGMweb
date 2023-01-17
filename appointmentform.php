@@ -64,7 +64,10 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
 
         if($total === '5'){
                 $week .= '<td class="today">' . $day. '<br><button type="button" class="btn btn-danger" disabled>Fully Booked</button>';
-        } else {
+        }elseif($today=date('Y-m-d')){
+            $week .= '<td class="today">' . $day . '<br><button type="button" class="btn btn-danger" disabled>N/A</button>';
+        }
+         else {
             $week .= '<td class="today">' . $day. '<br><button type="button" name="book" class="btn btn-info" data-toggle="modal" data-target="#my-modal"><a href="?chapter=' . $chapter . '&date=' . $date . '#myModal">Book</a></button>';}
         } else {
         $query = "SELECT date, count(*) AS total FROM appointment WHERE date = '$date' AND cgm_id = '$chapter' AND status = 'Confirmed'";
@@ -79,6 +82,8 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
 
             $week .= '<td>' . $day . '<br><button type="button" class="btn btn-danger" disabled>Fully Booked</button>';
         }elseif($date<date('Y-m-d')){
+            $week .= '<td>' . $day . '<br><button type="button" class="btn btn-danger" disabled>N/A</button>';
+        }elseif($date<date('Y-m-d',strtotime('+4 days'))){
             $week .= '<td>' . $day . '<br><button type="button" class="btn btn-danger" disabled>N/A</button>';
         }
          else {

@@ -38,7 +38,7 @@ if (isset($_POST['confirm_btn_set'])) {
     $mail->Host = "smtp.gmail.com";
 
     $mail->Username = "cgmchurchweb@gmail.com";
-    $mail->Password = "pfzfomvzlzfwkebz";
+    $mail->Password = "ejyfdyctmtqdmduf";
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 
@@ -83,7 +83,7 @@ if (isset($_POST['reject_btn_set'])) {
     $mail->Host = "smtp.gmail.com";
 
     $mail->Username = "cgmchurchweb@gmail.com";
-    $mail->Password = "pfzfomvzlzfwkebz";
+    $mail->Password = "ejyfdyctmtqdmduf";
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 
@@ -126,7 +126,7 @@ if (isset($_POST['confirm_prayer'])) {
     $mail->Host = "smtp.gmail.com";
 
     $mail->Username = "cgmchurchweb@gmail.com";
-    $mail->Password = "pfzfomvzlzfwkebz";
+    $mail->Password = "ejyfdyctmtqdmduf";
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 
@@ -186,7 +186,7 @@ if(isset($_POST['sendappoint'])){
     $mail->Host = "smtp.gmail.com";
 
     $mail->Username = "cgmchurchweb@gmail.com";
-    $mail->Password = "pfzfomvzlzfwkebz";
+    $mail->Password = "ejyfdyctmtqdmduf";
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 
