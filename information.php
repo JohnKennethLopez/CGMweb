@@ -45,6 +45,21 @@ if(!isset($_SESSION["username"]))
     <section id="upload">
         <div class="pinakalabas">
                 <div class="edit">
+                <div class="homepic">
+                        <div class="inside">
+                            <p class="editbtn"><a href="upload5.php"> Upload<br>Limang Minunto</a></p>
+                        </div>
+                    </div>
+                    <div class="homepic">
+                        <div class="inside">
+                            <p class="editbtn"><a href="uploadmanna.php"> Upload<br>Daily Manna</a></p>
+                        </div>
+                    </div>
+                    <div class="homepic">
+                        <div class="inside">
+                            <p class="editbtn"><a href="uploadanswer.php"> Upload Jesus is the Answer</a></p>
+                        </div>
+                    </div>
                     <div class="homepic">
                         <div class="inside">
                             <p class="editbtn"><a href="editHomePic.php">Edit Home pages Pictures</a></p>

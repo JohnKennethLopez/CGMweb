@@ -20,7 +20,7 @@ if(!isset($_SESSION["username"]))
     <section id="editevent">
         <div class="back">
             <div class="inn">
-                <p class="backbtn"> <a href="editprog.php"> Go Back to <br>Stream Iframe</a></p>
+                <p class="backbtn"> <a href="information.php#upload"> Go Back to <br>Stream Iframe</a></p>
             </div>
         </div>
         <div class="table">

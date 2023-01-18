@@ -39,7 +39,7 @@ if(!isset($_SESSION["username"]))
                     <div class="button">
                         <div class="submit">
                             <button name="submitlimang" id="send">UPLOAD</button>
-                            <button class="cancel"> <a href="editprog.php"> CANCEL</a></button>
+                            <button class="cancel"> <a href="information.php#upload"> CANCEL</a></button>
                             <button class="cancel"><a href="delete5.php">DELETE Limang Minuto</a></button>
                         </div>
                     </div>

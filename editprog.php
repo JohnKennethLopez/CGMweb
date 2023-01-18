@@ -32,17 +32,7 @@ if(!isset($_SESSION["username"]))
                         <p class="backbtn"> <a href="uploadevent.php?chapter=<?php echo $chapter ?>"> Go Back to <br>the Admin</a></p>
                     </div>
                 </div>
-                <div class="mm">
-                    <div class="nn">
-                        <p class="bckbtn"> <a href="upload5.php"> Upload<br>Limang Minunto</a></p>
-                    </div>
-                    <div class="nn">
-                        <p class="bckbtn"> <a href="uploadmanna.php"> Upload<br>Daily Manna</a></p>
-                    </div>
-                    <div class="nn">
-                        <p class="bckbtn"> <a href="uploadanswer.php"> Upload<br>Jesus is the Answer</a></p>
-                    </div>
-                </div>
+                
         </div>
         <div class="table">
             <table class="tablecont">

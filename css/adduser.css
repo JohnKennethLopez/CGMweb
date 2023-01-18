@@ -122,12 +122,11 @@ hr {
     background-repeat: no-repeat;
     background-position: top center;
     height: auto;
+    min-height: 90vh;
     padding-bottom: 10rem;
 }
 /*event*/
 .h1up {
-    background: linear-gradient(145deg, #020049, #2427ff);
-    color: white;
     padding: 10px 0 10px 0;
     text-align: center;
     border-radius: 15px;

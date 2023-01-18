@@ -63,6 +63,7 @@ include('cgmdbconnection.php');
                             <div class="inputdet">
                                 <label for="email">Email</label>
                                 <input type="text" name="email" id="email" placeholder="Enter your email" required>
+                                <p class="note">Note: Please Enter a valid or working EMAIL(gmail).</p>
                             </div>
                             <div class="inputdet">
                                 <label for="request">Prayer Request</label>
