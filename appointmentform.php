@@ -51,8 +51,8 @@ $week .= str_repeat('<td></td>', $str);
 $chapter = $_GET['chapter'];
 
 for ( $day = 1; $day <= $day_count; $day++, $str++) {
-     
-    $date = $ym . '-' . $day;
+    $nday = sprintf("%02d", $day);
+    $date = $ym . '-' . $nday;
      
     if ($today == $date) {
         $query = "SELECT date, count(*) AS total FROM appointment WHERE date = '$today' AND cgm_id = '$chapter' AND status = 'Confirmed'";
