@@ -45,7 +45,12 @@ if(!isset($_SESSION["username"]))
     <section id="upload">
         <div class="pinakalabas">
                 <div class="edit">
-                <div class="homepic">
+                    <div class="homepic">
+                        <div class="inside">
+                            <p class="editbtn"><a href="Earchive.php"> Update<br>Event Archive</a></p>
+                        </div>
+                    </div>
+                    <div class="homepic">
                         <div class="inside">
                             <p class="editbtn"><a href="upload5.php"> Upload<br>Limang Minunto</a></p>
                         </div>
