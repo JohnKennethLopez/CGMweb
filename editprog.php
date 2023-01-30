@@ -44,7 +44,7 @@ if(!isset($_SESSION["username"]))
                 
                 <?php
                     
-                    $query = "SELECT * FROM stream WHERE id = $chapter";
+                    $query = "SELECT * FROM stream WHERE cgm_id = $chapter";
                     $query_run = mysqli_query($con,$query);
                     $check_attendance = mysqli_num_rows($query_run) > 0; 
                     if($check_attendance){
@@ -54,7 +54,7 @@ if(!isset($_SESSION["username"]))
                         <td><?php echo $row['cgmchapter']?></td>
                         <td><?php echo $row['live']?></td>
                         
-                        <td><a href="Editprogbtn.php?chapter=<?php echo $chapter ?>"><button class="edit">edit</button></a></td>
+                        <td><a href="Editprogbtn.php?chapter=<?php echo $chapter ?>&edit=<?php echo $row['id']; ?>"><button class="edit">edit</button></a></td>
                     </tr>
                     <?php
                         }

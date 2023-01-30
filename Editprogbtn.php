@@ -30,8 +30,8 @@ if(!isset($_SESSION["username"]))
 
   
 
-    
-    $sql = "SELECT * FROM stream WHERE id = $chapter";
+    $id = $_GET['edit'];
+    $sql = "SELECT * FROM stream WHERE id = $id";
     $result = mysqli_query($con, $sql);
     $row = mysqli_fetch_array($result);
 
@@ -45,7 +45,7 @@ if(!isset($_SESSION["username"]))
         $live = $_POST['live'];
         $title = $_POST['title'];
 
-        $query = "UPDATE stream SET live='$live', title='$title' where id=$chapter";
+        $query = "UPDATE stream SET live='$live', title='$title' where id=$id";
         $query_run = mysqli_query($con,$query);
 
         if($query_run){

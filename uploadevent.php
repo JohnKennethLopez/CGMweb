@@ -131,7 +131,7 @@ if(!isset($_SESSION["username"]))
                     
                     <div class="editprog">
                         <div class="inside">
-                            <p class="editbtn"><a href="editprog.php?chapter=<?php echo $chapter ?>">Edit Live stream<br>Iframe</a></p>
+                            <p class="editbtn"><a href="uploadlive.php?chapter=<?php echo $chapter ?>">Upload Live<br>stream</a></p>
                         </div>
                     </div>
                     

@@ -14,6 +14,7 @@ include('cgmdbconnection.php');
         $chap = $_POST['cgmchapter'];
         $anntitle = $_POST['announceTitle'];
         $caption = $_POST['caption'];
+        $chapter = $_POST['chapter'];
 
         $query = "INSERT INTO announcement (`img`, `cgmchapter`, `announceTitle`, `caption`) VALUES ('$img','$chap','$anntitle','$caption')";
         $query_run = mysqli_query($con,$query);

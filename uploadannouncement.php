@@ -37,6 +37,7 @@ if(!isset($_SESSION["username"]))
             <div class="labass">
                 <form action="announce.php" method="POST" enctype="multipart/form-data">
                 <h1 class="h1up">ANNOUNCEMENT</h1>
+                <input name="chapter" hidden value="<?php echo $_GET['chapter'] ?>">
                 <div class="loob">
                 <div class="iisang">
                 <div class="container">

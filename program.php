@@ -64,7 +64,7 @@
                         include ('cgmdbconnection.php');
                     ?>
                     <?php
-                        $sql = "SELECT * FROM stream WHERE id='1'";
+                        $sql = "SELECT * FROM stream WHERE cgm_id='1' ORDER BY id DESC LIMIT 1";
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
@@ -76,11 +76,43 @@
                 <div class="streamTitle">
                     <p><?php echo $title; ?></p>
                 </div>
+                <!--LAS PINAS LIVE ARCHIVE-->
+                <div class="limangminuto">
+                <div class="answ">
+                    <h1>CGM Las Piñas Main LIVE ARCHIVE</h1>
+                </div>
+                
+            <div class="watch">
+                <div class="lima">
+                <?php
+                    include('cgmdbconnection.php');
+                ?>
+                    <?php
+                        $dibconfig = mysqli_select_db($con,'cgm');
+                        
+                        $query = "SELECT * FROM stream WHERE cgm_id='1' AND id < (SELECT MAX(id) FROM stream) ORDER BY id desc";
+                        $query_run = mysqli_query($con,$query);
+                        $check_upload = mysqli_num_rows($query_run) > 0; 
+                        if($check_upload){
+                            while($row = mysqli_fetch_array($query_run)){
+                    ?>
+                    <div class="limavid">
+                        <?php echo $row['live']?>
+                    </div>
+                    <?php
+                        }
+                        } else{
+                            echo "NO LIVE STREAM FOUND!!!";
+                        }
+                    ?>
+                </div>
+            </div>
+        </div>
             </div>
 
             <div id="tanauan">
                     <?php
-                        $sql = "SELECT * FROM stream WHERE id='10'";
+                        $sql = "SELECT * FROM stream WHERE cgm_id='10' ORDER BY id DESC LIMIT 1";
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
@@ -92,11 +124,43 @@
                 <div class="streamTitle">
                     <p><?php echo $title; ?></p>
                 </div>
+                <!--TANAUAN LIVE ARCHIVE-->
+                <div class="limangminuto">
+                <div class="answ">
+                    <h1>CGM Tanauan LIVE ARCHIVE</h1>
+                </div>
+                
+            <div class="watch">
+                <div class="lima">
+                <?php
+                    include('cgmdbconnection.php');
+                ?>
+                    <?php
+                        $dibconfig = mysqli_select_db($con,'cgm');
+                        
+                        $query = "SELECT * FROM stream WHERE cgm_id='10' AND id < (SELECT MAX(id) FROM stream) ORDER BY id desc";
+                        $query_run = mysqli_query($con,$query);
+                        $check_upload = mysqli_num_rows($query_run) > 0; 
+                        if($check_upload){
+                            while($row = mysqli_fetch_array($query_run)){
+                    ?>
+                    <div class="limavid">
+                        <?php echo $row['live']?>
+                    </div>
+                    <?php
+                        }
+                        } else{
+                            echo "NO LIVE STREAM FOUND!!!";
+                        }
+                    ?>
+                </div>
+            </div>
+        </div>
             </div>
 
             <div id="balete">
                     <?php
-                        $sql = "SELECT * FROM stream WHERE id='3'";
+                        $sql = "SELECT * FROM stream WHERE cgm_id='3' ORDER BY id DESC LIMIT 1";
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
@@ -108,11 +172,43 @@
                 <div class="streamTitle">
                     <p><?php echo $title; ?></p>
                 </div>
+                <!--BALETE LIVE ARCHIVE-->
+                <div class="limangminuto">
+                <div class="answ">
+                    <h1>CGM BALETE LIVE ARCHIVE</h1>
+                </div>
+                
+            <div class="watch">
+                <div class="lima">
+                <?php
+                    include('cgmdbconnection.php');
+                ?>
+                    <?php
+                        $dibconfig = mysqli_select_db($con,'cgm');
+                        
+                        $query = "SELECT * FROM stream WHERE cgm_id='3' AND id < (SELECT MAX(id) FROM stream) ORDER BY id desc";
+                        $query_run = mysqli_query($con,$query);
+                        $check_upload = mysqli_num_rows($query_run) > 0; 
+                        if($check_upload){
+                            while($row = mysqli_fetch_array($query_run)){
+                    ?>
+                    <div class="limavid">
+                        <?php echo $row['live']?>
+                    </div>
+                    <?php
+                        }
+                        } else{
+                            echo "NO LiVE STREAM FOUND!!!";
+                        }
+                    ?>
+                </div>
+            </div>
+        </div>
             </div>
 
             <div id="edsa">
                     <?php
-                        $sql = "SELECT * FROM stream WHERE id='7'";
+                        $sql = "SELECT * FROM stream WHERE cgm_id='7'ORDER BY id DESC LIMIT 1";
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
@@ -124,11 +220,43 @@
                 <div class="streamTitle">
                     <p><?php echo $title; ?></p>
                 </div>
+                <!--EDSA LIVE ARCHIVE-->
+                <div class="limangminuto">
+                <div class="answ">
+                    <h1>CGM EDSA LIVE ARCHIVE</h1>
+                </div>
+                
+            <div class="watch">
+                <div class="lima">
+                <?php
+                    include('cgmdbconnection.php');
+                ?>
+                    <?php
+                        $dibconfig = mysqli_select_db($con,'cgm');
+                        
+                        $query = "SELECT * FROM stream WHERE cgm_id='7' AND id < (SELECT MAX(id) FROM stream) ORDER BY id desc";
+                        $query_run = mysqli_query($con,$query);
+                        $check_upload = mysqli_num_rows($query_run) > 0; 
+                        if($check_upload){
+                            while($row = mysqli_fetch_array($query_run)){
+                    ?>
+                    <div class="limavid">
+                        <?php echo $row['live']?>
+                    </div>
+                    <?php
+                        }
+                        } else{
+                            echo "NO LiVE STREAM FOUND!!!";
+                        }
+                    ?>
+                </div>
+            </div>
+        </div>
             </div>
 
             <div id="pulilan">
                     <?php
-                        $sql = "SELECT * FROM stream WHERE id='15'";
+                        $sql = "SELECT * FROM stream WHERE cgm_id='15' ORDER BY id DESC LIMIT 1";
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
@@ -140,11 +268,43 @@
                 <div class="streamTitle">
                     <p><?php echo $title; ?></p>
                 </div>
+                <!--PULILAN LIVE ARCHIVE-->
+                <div class="limangminuto">
+                <div class="answ">
+                    <h1>CGM Pulilan LIVE ARCHIVE</h1>
+                </div>
+                
+            <div class="watch">
+                <div class="lima">
+                <?php
+                    include('cgmdbconnection.php');
+                ?>
+                    <?php
+                        $dibconfig = mysqli_select_db($con,'cgm');
+                        
+                        $query = "SELECT * FROM stream WHERE cgm_id='15' AND id < (SELECT MAX(id) FROM stream) ORDER BY id desc";
+                        $query_run = mysqli_query($con,$query);
+                        $check_upload = mysqli_num_rows($query_run) > 0; 
+                        if($check_upload){
+                            while($row = mysqli_fetch_array($query_run)){
+                    ?>
+                    <div class="limavid">
+                        <?php echo $row['live']?>
+                    </div>
+                    <?php
+                        }
+                        } else{
+                            echo "NO LiVE STREAM FOUND!!!";
+                        }
+                    ?>
+                </div>
+            </div>
+        </div>
             </div>
 
             <div id="bacoor">
             <?php
-                        $sql = "SELECT * FROM stream WHERE id='2'";
+                        $sql = "SELECT * FROM stream WHERE cgm_id='2' ORDER BY id DESC LIMIT 1" ;
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
@@ -156,11 +316,43 @@
                 <div class="streamTitle">
                     <p><?php echo $title; ?></p>
                 </div>
+                <!--BACOOR LIVE ARCHIVE-->
+                <div class="limangminuto">
+                <div class="answ">
+                    <h1>CGM Bacoor LIVE ARCHIVE</h1>
+                </div>
+                
+            <div class="watch">
+                <div class="lima">
+                <?php
+                    include('cgmdbconnection.php');
+                ?>
+                    <?php
+                        $dibconfig = mysqli_select_db($con,'cgm');
+                        
+                        $query = "SELECT * FROM stream WHERE cgm_id='2' AND id < (SELECT MAX(id) FROM stream) ORDER BY id desc";
+                        $query_run = mysqli_query($con,$query);
+                        $check_upload = mysqli_num_rows($query_run) > 0; 
+                        if($check_upload){
+                            while($row = mysqli_fetch_array($query_run)){
+                    ?>
+                    <div class="limavid">
+                        <?php echo $row['live']?>
+                    </div>
+                    <?php
+                        }
+                        } else{
+                            echo "NO LIVE STREAM FOUND!!!";
+                        }
+                    ?>
+                </div>
+            </div>
+        </div>
             </div>
 
             <div id="bustos">
             <?php
-                        $sql = "SELECT * FROM stream WHERE id='4'";
+                        $sql = "SELECT * FROM stream WHERE cgm_id='4' ORDER BY id DESC LIMIT 1" ;
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
@@ -172,11 +364,43 @@
                 <div class="streamTitle">
                     <p><?php echo $title; ?></p>
                 </div>
+                <!--BUSTOS LIVE ARCHIVE-->
+                <div class="limangminuto">
+                <div class="answ">
+                    <h1>CGM Bustos LIVE ARCHIVE</h1>
+                </div>
+                
+            <div class="watch">
+                <div class="lima">
+                <?php
+                    include('cgmdbconnection.php');
+                ?>
+                    <?php
+                        $dibconfig = mysqli_select_db($con,'cgm');
+                        
+                        $query = "SELECT * FROM stream WHERE cgm_id='4' AND id < (SELECT MAX(id) FROM stream) ORDER BY id desc";
+                        $query_run = mysqli_query($con,$query);
+                        $check_upload = mysqli_num_rows($query_run) > 0; 
+                        if($check_upload){
+                            while($row = mysqli_fetch_array($query_run)){
+                    ?>
+                    <div class="limavid">
+                        <?php echo $row['live']?>
+                    </div>
+                    <?php
+                        }
+                        } else{
+                            echo "NO LIVE STREAM FOUND!!!";
+                        }
+                    ?>
+                </div>
+            </div>
+        </div>
             </div>
 
             <div id="cabuyao">
             <?php
-                        $sql = "SELECT * FROM stream WHERE id='5'";
+                        $sql = "SELECT * FROM stream WHERE cgm_id='5' ORDER BY id DESC LIMIT 1" ;
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
@@ -188,11 +412,43 @@
                 <div class="streamTitle">
                     <p><?php echo $title; ?></p>
                 </div>
+                <!--CABUYAO LIVE ARCHIVE-->
+                <div class="limangminuto">
+                <div class="answ">
+                    <h1>CGM Cabuyao LIVE ARCHIVE</h1>
+                </div>
+                
+            <div class="watch">
+                <div class="lima">
+                <?php
+                    include('cgmdbconnection.php');
+                ?>
+                    <?php
+                        $dibconfig = mysqli_select_db($con,'cgm');
+                        
+                        $query = "SELECT * FROM stream WHERE cgm_id='5' AND id < (SELECT MAX(id) FROM stream) ORDER BY id desc";
+                        $query_run = mysqli_query($con,$query);
+                        $check_upload = mysqli_num_rows($query_run) > 0; 
+                        if($check_upload){
+                            while($row = mysqli_fetch_array($query_run)){
+                    ?>
+                    <div class="limavid">
+                        <?php echo $row['live']?>
+                    </div>
+                    <?php
+                        }
+                        } else{
+                            echo "NO LIVE STREAM FOUND!!!";
+                        }
+                    ?>
+                </div>
+            </div>
+        </div>
             </div>
 
             <div id="candaba">
             <?php
-                        $sql = "SELECT * FROM stream WHERE id='6'";
+                        $sql = "SELECT * FROM stream WHERE cgm_id='6' ORDER BY id DESC LIMIT 1" ;
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
@@ -204,11 +460,43 @@
                 <div class="streamTitle">
                     <p><?php echo $title; ?></p>
                 </div>
+                <!--CANDABA LIVE ARCHIVE-->
+                <div class="limangminuto">
+                <div class="answ">
+                    <h1>CGM Candaba LIVE ARCHIVE</h1>
+                </div>
+                
+            <div class="watch">
+                <div class="lima">
+                <?php
+                    include('cgmdbconnection.php');
+                ?>
+                    <?php
+                        $dibconfig = mysqli_select_db($con,'cgm');
+                        
+                        $query = "SELECT * FROM stream WHERE cgm_id='6' AND id < (SELECT MAX(id) FROM stream) ORDER BY id desc";
+                        $query_run = mysqli_query($con,$query);
+                        $check_upload = mysqli_num_rows($query_run) > 0; 
+                        if($check_upload){
+                            while($row = mysqli_fetch_array($query_run)){
+                    ?>
+                    <div class="limavid">
+                        <?php echo $row['live']?>
+                    </div>
+                    <?php
+                        }
+                        } else{
+                            echo "NO LIVE STREAM FOUND!!!";
+                        }
+                    ?>
+                </div>
+            </div>
+        </div>
             </div>
 
             <div id="gattaran">
             <?php
-                        $sql = "SELECT * FROM stream WHERE id='8'";
+                        $sql = "SELECT * FROM stream WHERE cgm_id='8' ORDER BY id DESC LIMIT 1" ;
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
@@ -220,11 +508,43 @@
                 <div class="streamTitle">
                     <p><?php echo $title; ?></p>
                 </div>
+                <!--GATTARAN LIVE ARCHIVE-->
+                <div class="limangminuto">
+                <div class="answ">
+                    <h1>CGM Gattaran LIVE ARCHIVE</h1>
+                </div>
+                
+            <div class="watch">
+                <div class="lima">
+                <?php
+                    include('cgmdbconnection.php');
+                ?>
+                    <?php
+                        $dibconfig = mysqli_select_db($con,'cgm');
+                        
+                        $query = "SELECT * FROM stream WHERE cgm_id='8' AND id < (SELECT MAX(id) FROM stream) ORDER BY id desc";
+                        $query_run = mysqli_query($con,$query);
+                        $check_upload = mysqli_num_rows($query_run) > 0; 
+                        if($check_upload){
+                            while($row = mysqli_fetch_array($query_run)){
+                    ?>
+                    <div class="limavid">
+                        <?php echo $row['live']?>
+                    </div>
+                    <?php
+                        }
+                        } else{
+                            echo "NO LIVE STREAM FOUND!!!";
+                        }
+                    ?>
+                </div>
+            </div>
+        </div>
             </div>
 
             <div id="hinigaran">
             <?php
-                        $sql = "SELECT * FROM stream WHERE id='9'";
+                        $sql = "SELECT * FROM stream WHERE cgm_id='9' ORDER BY id DESC LIMIT 1" ;
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
@@ -236,11 +556,43 @@
                 <div class="streamTitle">
                     <p><?php echo $title; ?></p>
                 </div>
+                <!--HINIGARAN LIVE ARCHIVE-->
+                <div class="limangminuto">
+                <div class="answ">
+                    <h1>CGM Hinigaran LIVE ARCHIVE</h1>
+                </div>
+                
+            <div class="watch">
+                <div class="lima">
+                <?php
+                    include('cgmdbconnection.php');
+                ?>
+                    <?php
+                        $dibconfig = mysqli_select_db($con,'cgm');
+                        
+                        $query = "SELECT * FROM stream WHERE cgm_id='9' AND id < (SELECT MAX(id) FROM stream) ORDER BY id desc";
+                        $query_run = mysqli_query($con,$query);
+                        $check_upload = mysqli_num_rows($query_run) > 0; 
+                        if($check_upload){
+                            while($row = mysqli_fetch_array($query_run)){
+                    ?>
+                    <div class="limavid">
+                        <?php echo $row['live']?>
+                    </div>
+                    <?php
+                        }
+                        } else{
+                            echo "NO LIVE STREAM FOUND!!!";
+                        }
+                    ?>
+                </div>
+            </div>
+        </div>
             </div>
 
             <div id="mariveles">
             <?php
-                        $sql = "SELECT * FROM stream WHERE id='11'";
+                        $sql = "SELECT * FROM stream WHERE cgm_id='11' ORDER BY id DESC LIMIT 1";
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
@@ -252,11 +604,43 @@
                 <div class="streamTitle">
                     <p><?php echo $title; ?></p>
                 </div>
+                <!--MARIVELES LIVE ARCHIVE-->
+                <div class="limangminuto">
+                <div class="answ">
+                    <h1>CGM Mariveles LIVE ARCHIVE</h1>
+                </div>
+                
+            <div class="watch">
+                <div class="lima">
+                <?php
+                    include('cgmdbconnection.php');
+                ?>
+                    <?php
+                        $dibconfig = mysqli_select_db($con,'cgm');
+                        
+                        $query = "SELECT * FROM stream WHERE cgm_id='11' AND id < (SELECT MAX(id) FROM stream) ORDER BY id desc";
+                        $query_run = mysqli_query($con,$query);
+                        $check_upload = mysqli_num_rows($query_run) > 0; 
+                        if($check_upload){
+                            while($row = mysqli_fetch_array($query_run)){
+                    ?>
+                    <div class="limavid">
+                        <?php echo $row['live']?>
+                    </div>
+                    <?php
+                        }
+                        } else{
+                            echo "NO LIVE STREAM FOUND!!!";
+                        }
+                    ?>
+                </div>
+            </div>
+        </div>
             </div>
 
             <div id="nasugbo">
             <?php
-                        $sql = "SELECT * FROM stream WHERE id='12'";
+                        $sql = "SELECT * FROM stream WHERE cgm_id='12' ORDER BY id DESC LIMIT 1";
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
@@ -268,11 +652,43 @@
                 <div class="streamTitle">
                     <p><?php echo $title; ?></p>
                 </div>
+                <!--NASUGBO LIVE ARCHIVE-->
+                <div class="limangminuto">
+                <div class="answ">
+                    <h1>CGM Nasugbo LIVE ARCHIVE</h1>
+                </div>
+                
+            <div class="watch">
+                <div class="lima">
+                <?php
+                    include('cgmdbconnection.php');
+                ?>
+                    <?php
+                        $dibconfig = mysqli_select_db($con,'cgm');
+                        
+                        $query = "SELECT * FROM stream WHERE cgm_id='12' AND id < (SELECT MAX(id) FROM stream) ORDER BY id desc";
+                        $query_run = mysqli_query($con,$query);
+                        $check_upload = mysqli_num_rows($query_run) > 0; 
+                        if($check_upload){
+                            while($row = mysqli_fetch_array($query_run)){
+                    ?>
+                    <div class="limavid">
+                        <?php echo $row['live']?>
+                    </div>
+                    <?php
+                        }
+                        } else{
+                            echo "NO LIVE STREAM FOUND!!!";
+                        }
+                    ?>
+                </div>
+            </div>
+        </div>
             </div>
 
             <div id="navotas">
             <?php
-                        $sql = "SELECT * FROM stream WHERE id='13'";
+                        $sql = "SELECT * FROM stream WHERE cgm_id='13' ORDER BY id DESC LIMIT 1";
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
@@ -284,11 +700,43 @@
                 <div class="streamTitle">
                     <p><?php echo $title; ?></p>
                 </div>
+                <!--NAVOTAS LIVE ARCHIVE-->
+                <div class="limangminuto">
+                <div class="answ">
+                    <h1>CGM Navotas LIVE ARCHIVE</h1>
+                </div>
+                
+            <div class="watch">
+                <div class="lima">
+                <?php
+                    include('cgmdbconnection.php');
+                ?>
+                    <?php
+                        $dibconfig = mysqli_select_db($con,'cgm');
+                        
+                        $query = "SELECT * FROM stream WHERE cgm_id='13' AND id < (SELECT MAX(id) FROM stream) ORDER BY id desc";
+                        $query_run = mysqli_query($con,$query);
+                        $check_upload = mysqli_num_rows($query_run) > 0; 
+                        if($check_upload){
+                            while($row = mysqli_fetch_array($query_run)){
+                    ?>
+                    <div class="limavid">
+                        <?php echo $row['live']?>
+                    </div>
+                    <?php
+                        }
+                        } else{
+                            echo "NO LIVE STREAM FOUND!!!";
+                        }
+                    ?>
+                </div>
+            </div>
+        </div>
             </div>
 
             <div id="prieto">
             <?php
-                        $sql = "SELECT * FROM stream WHERE id='14'";
+                        $sql = "SELECT * FROM stream WHERE cgm_id='14' ORDER BY id DESC LIMIT 1";
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
@@ -300,11 +748,43 @@
                 <div class="streamTitle">
                     <p><?php echo $title; ?></p>
                 </div>
+                <!--PRIETO LIVE ARCHIVE-->
+                <div class="limangminuto">
+                <div class="answ">
+                    <h1>CGM Prieto LIVE ARCHIVE</h1>
+                </div>
+                
+            <div class="watch">
+                <div class="lima">
+                <?php
+                    include('cgmdbconnection.php');
+                ?>
+                    <?php
+                        $dibconfig = mysqli_select_db($con,'cgm');
+                        
+                        $query = "SELECT * FROM stream WHERE cgm_id='14' AND id < (SELECT MAX(id) FROM stream) ORDER BY id desc";
+                        $query_run = mysqli_query($con,$query);
+                        $check_upload = mysqli_num_rows($query_run) > 0; 
+                        if($check_upload){
+                            while($row = mysqli_fetch_array($query_run)){
+                    ?>
+                    <div class="limavid">
+                        <?php echo $row['live']?>
+                    </div>
+                    <?php
+                        }
+                        } else{
+                            echo "NO LIVE STREAM FOUND!!!";
+                        }
+                    ?>
+                </div>
+            </div>
+        </div>
             </div>
 
             <div id="sampaloc">
             <?php
-                        $sql = "SELECT * FROM stream WHERE id='16'";
+                        $sql = "SELECT * FROM stream WHERE cgm_id='16' ORDER BY id DESC LIMIT 1";
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
@@ -316,11 +796,43 @@
                 <div class="streamTitle">
                     <p><?php echo $title; ?></p>
                 </div>
+                <!--SAMPALOC ARCHIVE-->
+                <div class="limangminuto">
+                <div class="answ">
+                    <h1>CGM Sampaloc LIVE ARCHIVE</h1>
+                </div>
+                
+            <div class="watch">
+                <div class="lima">
+                <?php
+                    include('cgmdbconnection.php');
+                ?>
+                    <?php
+                        $dibconfig = mysqli_select_db($con,'cgm');
+                        
+                        $query = "SELECT * FROM stream WHERE cgm_id='16' AND id < (SELECT MAX(id) FROM stream) ORDER BY id desc";
+                        $query_run = mysqli_query($con,$query);
+                        $check_upload = mysqli_num_rows($query_run) > 0; 
+                        if($check_upload){
+                            while($row = mysqli_fetch_array($query_run)){
+                    ?>
+                    <div class="limavid">
+                        <?php echo $row['live']?>
+                    </div>
+                    <?php
+                        }
+                        } else{
+                            echo "NO LIVE STREAM FOUND!!!";
+                        }
+                    ?>
+                </div>
+            </div>
+        </div>
             </div>
 
             <div id="sanpedro">
             <?php
-                        $sql = "SELECT * FROM stream WHERE id='17'";
+                        $sql = "SELECT * FROM stream WHERE cgm_id='17' ORDER BY id DESC LIMIT 1";
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
@@ -332,11 +844,43 @@
                 <div class="streamTitle">
                     <p><?php echo $title; ?></p>
                 </div>
+                <!--SAN PEDRO LIVE ARCHIVE-->
+                <div class="limangminuto">
+                <div class="answ">
+                    <h1>CGM San Pedro LIVE ARCHIVE</h1>
+                </div>
+                
+            <div class="watch">
+                <div class="lima">
+                <?php
+                    include('cgmdbconnection.php');
+                ?>
+                    <?php
+                        $dibconfig = mysqli_select_db($con,'cgm');
+                        
+                        $query = "SELECT * FROM stream WHERE cgm_id='17' AND id < (SELECT MAX(id) FROM stream) ORDER BY id desc";
+                        $query_run = mysqli_query($con,$query);
+                        $check_upload = mysqli_num_rows($query_run) > 0; 
+                        if($check_upload){
+                            while($row = mysqli_fetch_array($query_run)){
+                    ?>
+                    <div class="limavid">
+                        <?php echo $row['live']?>
+                    </div>
+                    <?php
+                        }
+                        } else{
+                            echo "NO LIVE STREAM FOUND!!!";
+                        }
+                    ?>
+                </div>
+            </div>
+        </div>
             </div>
 
             <div id="starosa">
             <?php
-                        $sql = "SELECT * FROM stream WHERE id='18'";
+                        $sql = "SELECT * FROM stream WHERE cgm_id='18' ORDER BY id DESC LIMIT 1";
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
@@ -348,11 +892,43 @@
                 <div class="streamTitle">
                     <p><?php echo $title; ?></p>
                 </div>
+                <!--STA ROSA LIVE ARCHIVE-->
+                <div class="limangminuto">
+                <div class="answ">
+                    <h1>CGM Sta rosa LIVE ARCHIVE</h1>
+                </div>
+                
+            <div class="watch">
+                <div class="lima">
+                <?php
+                    include('cgmdbconnection.php');
+                ?>
+                    <?php
+                        $dibconfig = mysqli_select_db($con,'cgm');
+                        
+                        $query = "SELECT * FROM stream WHERE cgm_id='18' AND id < (SELECT MAX(id) FROM stream) ORDER BY id desc";
+                        $query_run = mysqli_query($con,$query);
+                        $check_upload = mysqli_num_rows($query_run) > 0; 
+                        if($check_upload){
+                            while($row = mysqli_fetch_array($query_run)){
+                    ?>
+                    <div class="limavid">
+                        <?php echo $row['live']?>
+                    </div>
+                    <?php
+                        }
+                        } else{
+                            echo "NO LIVE STREAM FOUND!!!";
+                        }
+                    ?>
+                </div>
+            </div>
+        </div>
             </div>
 
             <div id="taguig">
             <?php
-                        $sql = "SELECT * FROM stream WHERE id='19'";
+                        $sql = "SELECT * FROM stream WHERE cgm_id='19' ORDER BY id DESC LIMIT 1";
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
@@ -364,11 +940,43 @@
                 <div class="streamTitle">
                     <p><?php echo $title; ?></p>
                 </div>
+                <!--TAGUIG LIVE ARCHIVE-->
+                <div class="limangminuto">
+                <div class="answ">
+                    <h1>CGM Taguig LIVE ARCHIVE</h1>
+                </div>
+                
+            <div class="watch">
+                <div class="lima">
+                <?php
+                    include('cgmdbconnection.php');
+                ?>
+                    <?php
+                        $dibconfig = mysqli_select_db($con,'cgm');
+                        
+                        $query = "SELECT * FROM stream WHERE cgm_id='19' AND id < (SELECT MAX(id) FROM stream) ORDER BY id desc";
+                        $query_run = mysqli_query($con,$query);
+                        $check_upload = mysqli_num_rows($query_run) > 0; 
+                        if($check_upload){
+                            while($row = mysqli_fetch_array($query_run)){
+                    ?>
+                    <div class="limavid">
+                        <?php echo $row['live']?>
+                    </div>
+                    <?php
+                        }
+                        } else{
+                            echo "NO LIVE STREAM FOUND!!!";
+                        }
+                    ?>
+                </div>
+            </div>
+        </div>
             </div>
 
             <div id="tinio">
             <?php
-                        $sql = "SELECT * FROM stream WHERE id='20'";
+                        $sql = "SELECT * FROM stream WHERE cgm_id='20' ORDER BY id DESC LIMIT 1";
                         $result = mysqli_query($con, $sql);
                         $row = mysqli_fetch_array($result);
                         $live = $row['live'];
@@ -380,6 +988,38 @@
                 <div class="streamTitle">
                     <p><?php echo $title; ?></p>
                 </div>
+                <!--TINIO LIVE ARCHIVE-->
+                <div class="limangminuto">
+                <div class="answ">
+                    <h1>CGM Gen. Tinio LIVE ARCHIVE</h1>
+                </div>
+                
+            <div class="watch">
+                <div class="lima">
+                <?php
+                    include('cgmdbconnection.php');
+                ?>
+                    <?php
+                        $dibconfig = mysqli_select_db($con,'cgm');
+                        
+                        $query = "SELECT * FROM stream WHERE cgm_id='20' AND id < (SELECT MAX(id) FROM stream) ORDER BY id desc";
+                        $query_run = mysqli_query($con,$query);
+                        $check_upload = mysqli_num_rows($query_run) > 0; 
+                        if($check_upload){
+                            while($row = mysqli_fetch_array($query_run)){
+                    ?>
+                    <div class="limavid">
+                        <?php echo $row['live']?>
+                    </div>
+                    <?php
+                        }
+                        } else{
+                            echo "NO LIVE STREAM FOUND!!!";
+                        }
+                    ?>
+                </div>
+            </div>
+        </div>
             </div>
 
         </section>
