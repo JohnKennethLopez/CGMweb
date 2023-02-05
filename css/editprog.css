@@ -106,15 +106,32 @@ tbody tr:last-of-type {
 .edit {
     background: #020049;
     color: white;
-    padding: 10px;
-    border-radius: 5px 5px 0 0;
-    font-size: 15px;
+    padding: 7px;
+    border-radius: 5px;
+    font-size: 12px;
     letter-spacing: 3px;
     font-family: 'Orbitron', sans-serif;
     border: 0 solid black;
     border-bottom-color: #1a77e0;
-    border-bottom-width: 2px;
+    border-bottom-width: 5px;
 }
 .edit:hover {
     background: #1a77e0;
+}
+.delete-btn {
+    text-decoration: none;
+    background: #020049;
+    color: white;
+    padding: 7px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-family: 'Orbitron', sans-serif;
+    border: 0 solid black;
+    border-bottom-color: #8a0000;
+    border-bottom-width: 5px;
+}
+.delete-btn:hover {
+    background: red;
+    border-bottom-color: red;
+    border-bottom-width: 5px;
 }

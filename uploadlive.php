@@ -56,6 +56,7 @@ if(!isset($_SESSION["username"]))
                         <div class="isang">
                             <label for="live">Live Stream Iframe:</label>
                             <textarea name="live" id="caption" placeholder="Add Live Stream Iframe"></textarea>
+                            <p class="note">Note: Please remove all ' in the iframe so that you don't encounter some error</p>
                         </div>
                             <input type="submit" name="uplive" id="send" value="POST">
                     </div>
