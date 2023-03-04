@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('cgmdbconnection.php');
 
 if(!isset($_SESSION["username"]))
 {
@@ -34,59 +35,61 @@ if(!isset($_SESSION["username"]))
         </div>
             
         <div class="table">
-            <div class="tablehead"><h1>Appointment List</h1></div>
+            <div class="tablehead"><h1>Attendance List</h1></div>
             <table class="tablecont">
-                <tr>
-                    <th>DATE</th>
+                <thead>
                     <th>CGM CHAPTER</th>
+                    <th>DATE</th>
                     <th>FULL NAME</th>
-                    <th>EMAIL</th>
+                    <th>AGE</th>
+                    <th>GENDER</th>
                     <th>CONTACT NUMBER</th>
-                    <th>SERVICE</th>
-                    <th>TIME</th>
                     <th>ADDRESS</th>
-                    <th>MESSAGE</th>
-                </tr>
+                    
+                </thead>
                 <?php
                     include('cgmdbconnection.php');
                     $dibconfig = mysqli_select_db($con,'cgm');
-                    
-                    $query = "SELECT * FROM appointment order by id desc";
+                    $chapter = $_GET['chapter'];
+                    $query = "SELECT * FROM attendance WHERE cgm_id = $chapter";
                     $query_run = mysqli_query($con,$query);
                     $check_attendance = mysqli_num_rows($query_run) > 0; 
                     if($check_attendance){
                         while($row = mysqli_fetch_array($query_run)){
                     ?>
                     <tr class="scroll">
-                        <td><?php echo $row['date']?></td>
                         <td><?php echo $row['cgmchapter']?></td>
+                        <td><?php echo $row['date']?></td>
                         <td><?php echo $row['fullname']?></td>
-                        <td class="email-td"><?php echo $row['email']?></td>
-                        <td><?php echo $row['contact']?></td>
-                        <td><?php echo $row['service']?></td>
-                        <td><?php echo $row['time']?></td>
+                        <td><?php echo $row['age']?></td>
+                        <td><?php echo $row['gender']?></td>
+                        <td><?php echo $row['contactnumber']?></td>
                         <td><?php echo $row['address']?></td>
-                        <td><?php echo $row['message']?></td>
+                        
                     </tr>
                     <?php
+                            }
                         }
-                        } else{
-                            echo " No Appointment Reservation Found!";
+                        else
+                        {
+                             ?>
+                                <tr>
+                                    <td colspan="7"><center>No Attendance Record Found!!!</center></td>
+                                </tr>
+                            <?php
                         }
-                    
-
-                ?>
+                    ?>
             </table>
         </div>
         <?php 
                 include('cgmdbconnection.php');
 
-                $count_query = $count_query = mysqli_query($con, "SELECT COUNT(*) AS total FROM appointment");
+                $count_query = $count_query = mysqli_query($con, "SELECT COUNT(*) AS total FROM attendance WHERE cgm_id = $chapter");
                 $row_count = mysqli_fetch_assoc($count_query);
                 $count = $row_count['total'];
             ?>
             <div class="totalattend">
-                <h1 class="total">Total of Appointment Reservations: <?php echo $count; ?></h1>
+                <h1 class="total">Total of Attendees: <?php echo $count; ?></h1>
             </div>
     </section>
 </body>

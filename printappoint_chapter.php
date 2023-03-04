@@ -50,8 +50,8 @@ if(!isset($_SESSION["username"]))
                 <?php
                     include('cgmdbconnection.php');
                     $dibconfig = mysqli_select_db($con,'cgm');
-                    
-                    $query = "SELECT * FROM appointment order by id desc";
+                    $chapter = $_GET['chapter'];
+                    $query = "SELECT * FROM appointment WHERE cgm_id = $chapter order by id desc ";
                     $query_run = mysqli_query($con,$query);
                     $check_attendance = mysqli_num_rows($query_run) > 0; 
                     if($check_attendance){
@@ -69,19 +69,23 @@ if(!isset($_SESSION["username"]))
                         <td><?php echo $row['message']?></td>
                     </tr>
                     <?php
+                            }
                         }
-                        } else{
-                            echo " No Appointment Reservation Found!";
+                        else
+                        {
+                             ?>
+                                <tr>
+                                    <td colspan="11"><center>No Appointments Record Found!!!</center></td>
+                                </tr>
+                            <?php
                         }
-                    
-
-                ?>
+                    ?>
             </table>
         </div>
         <?php 
                 include('cgmdbconnection.php');
 
-                $count_query = $count_query = mysqli_query($con, "SELECT COUNT(*) AS total FROM appointment");
+                $count_query = $count_query = mysqli_query($con, "SELECT COUNT(*) AS total FROM appointment WHERE cgm_id = $chapter");
                 $row_count = mysqli_fetch_assoc($count_query);
                 $count = $row_count['total'];
             ?>

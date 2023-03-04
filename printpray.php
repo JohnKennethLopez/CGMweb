@@ -48,13 +48,13 @@ if(!isset($_SESSION["username"]))
                     include('cgmdbconnection.php');
                     $dibconfig = mysqli_select_db($con,'cgm');
                     
-                    $query = "SELECT * FROM prayer order by id desc";
+                    $query = "SELECT * FROM prayer";
                     $query_run = mysqli_query($con,$query);
                     $check_pray = mysqli_num_rows($query_run) > 0; 
                     if($check_pray){
                         while($row = mysqli_fetch_array($query_run)){
                     ?>
-                    <tr>
+                    <tr class="scroll">
                     <td class="official_id" hidden ><?php echo $row['id']?></td>
                         <td><?php echo $row['cgmchapter']?></td>
                         <td><?php echo $row['name']?></td>
@@ -65,13 +65,17 @@ if(!isset($_SESSION["username"]))
                         
                     </tr>
                     <?php
+                            }
                         }
-                        } else{
-                            echo " No Prayer Request & Prayer Reports Found!";
+                        else
+                        {
+                             ?>
+                                <tr>
+                                    <td colspan="6">No Prayer Request & Prayer Reports Record Found!!!</td>
+                                </tr>
+                            <?php
                         }
-                    
-
-                ?>
+                    ?>
             </table>
         </div>
         <?php 

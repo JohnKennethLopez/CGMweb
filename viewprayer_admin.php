@@ -17,6 +17,7 @@ if(!isset($_SESSION["username"]))
     <link rel="shortcut icon" type="image/png" href="css/image/icon.png">
     <link rel="stylesheet" href="css/viewprayerreq.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 <body>
     <section id="admin">
@@ -45,12 +46,12 @@ if(!isset($_SESSION["username"]))
         <div class="labas">
             <div class="filter">
                 <div class="inn">
-                    <p class="backbtn"><a href="searchpray_admin.php">Filter the<br>CGM CHAPTER</a></p>
+                    <p class="backbtn"><a href="searchpray_admin.php"><i class="fa-solid fa-filter"></i>  Filter</a></p>
                 </div>
             </div>
             <div class="print">
                 <div class="pr">
-                    <p class="printbtn"><a href="printpray.php">Print Prayer<br>Request/Reports List</a></p>
+                    <p class="printbtn"><a href="printpray.php">Print  <i class="fa-solid fa-print"></i></a></p>
                 </div>
             </div>
         </div>
@@ -95,13 +96,17 @@ if(!isset($_SESSION["username"]))
                         
                     </tr>
                     <?php
+                            }
                         }
-                        } else{
-                            echo " No Prayer Request & Prayer Reports Found!";
+                        else
+                        {
+                             ?>
+                                <tr>
+                                    <td colspan="6"><center>No Prayer Request & Prayer Reports Record Found!!!  </center></td>
+                                </tr>
+                            <?php
                         }
-                    
-
-                ?>
+                    ?>
             </table>
         </div>
     </section>

@@ -14,6 +14,7 @@ if(!isset($_SESSION["username"]))
     <title>CGM</title>
     <link rel="shortcut icon" type="image/png" href="css/image/icon.png">
     <link rel="stylesheet" href="css/attendlist.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 <body>
     <section id="admin">
@@ -46,12 +47,12 @@ if(!isset($_SESSION["username"]))
         <div class="labas">
             <div class="filter">
                 <div class="inn">
-                    <p class="backbtn"><a href="search.php?chapterid=<?php echo $chapter ?>">Filter the Date</a></p>
+                    <p class="backbtn"><a href="search.php?chapterid=<?php echo $chapter ?>"><i class="fa-solid fa-filter"></i>  Filter</a></p>
                 </div>
             </div>
             <div class="print">
                 <div class="pr">
-                    <p class="printbtn"><a href="printattend.php?chapter=<?php echo $chapter ?>">Print<br>Attendance List</a></p>
+                    <p class="printbtn"><a href="printattend_chapter.php?chapter=<?php echo $chapter ?>">Print  <i class="fa-solid fa-print"></i></a></p>
                 </div>
             </div>
         </div>
@@ -93,13 +94,17 @@ if(!isset($_SESSION["username"]))
                     
                     
                     <?php
+                            }
                         }
-                        } else{
-                            echo " No Attendee Found!";
+                        else
+                        {
+                             ?>
+                                <tr>
+                                    <td colspan="7"><center>No Attendance Record Found!!!</center></td>
+                                </tr>
+                            <?php
                         }
-                    
-
-                ?>
+                    ?>
             </table>
         </div>
             <?php 

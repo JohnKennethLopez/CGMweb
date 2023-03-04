@@ -40,11 +40,11 @@ if(!isset($_SESSION["username"]))
                             <div class="datefilter">
                                 <div class="fromdate">
                                     <label class="date_label" for="from_date">From Date:</label><br>
-                                    <input type="date" name="from_date" value="<?php if(isset($_GET['chapter'])){ echo $_GET['from_date']; } ?>">
+                                    <input type="date" name="from_date" value="<?php if(isset($_GET['from_date'])){ echo $_GET['from_date']; } ?>">
                                 </div>
                                 <div class="todate">
                                     <label class="date_label" for="to_date">To Date:</label><br>
-                                    <input type="date" name="to_date" value="<?php if(isset($_GET['chapter'])){ echo $_GET['to_date']; } ?>">
+                                    <input type="date" name="to_date" value="<?php if(isset($_GET['to_date'])){ echo $_GET['to_date']; } ?>">
                                 </div>
                             </div>
                             
@@ -102,7 +102,7 @@ if(!isset($_SESSION["username"]))
                         else
                         {
                              ?>
-                                <tr>
+                                <tr>    
                                     <td colspan="7">No Record Found!!!</td>
                                 </tr>
                             <?php

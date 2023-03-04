@@ -1,3 +1,11 @@
+<?php
+session_start();
+include('cgmdbconnection.php');
+if(!isset($_SESSION["username"]))
+{
+    header("location:admin.php");
+}
+?>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -16,7 +24,7 @@
         </div>
         <div class="back">
             <div class="inn">
-                <p class="backbtn"> <a href="admin2.php"> Go Back to <br>the Admin</a></p>
+                <p class="backbtn"> <a href="admin2.php">Back</a></p>
             </div>
         </div>
         <h1 class="head">Prayer Requests &<br> Answered Prayers</h1><hr>
@@ -25,14 +33,15 @@
                     <div class="filter">
                     <select name="chapter" id="church" >
                             <option value="select" disabled selected>Choose a CGM Church</option>
-                        <?php
+                            <?php
+
                         $chapter = "SELECT * FROM chapter";
                         $chapter_run = mysqli_query($con, $chapter);
 
                         while($row = mysqli_fetch_array($chapter_run)){
 
                         ?>
-                        <option value="<?php echo $row['id'] ?>"><?php echo $row['cgmchapter'] ?></option>
+                        <option value="<?php echo $row['cgmchapter'] ?>"><?php echo $row['cgmchapter'] ?></option>
                         <?php } ?>
                             </select><br>
                             <div class="datefilter">
@@ -68,8 +77,12 @@
                     {
                         
                         $chapter = $_GET['chapter'];
+                        $from_date = $_GET['from_date'];
+                        $to_date = $_GET['to_date'];
+                        $new_from_date = date("Y/m/d", strtotime($from_date));
+                        $new_to_date = date("Y/m/d", strtotime($to_date));
 
-                        $query = "SELECT * FROM prayer WHERE cgmchapter='$chapter' ";
+                        $query = "SELECT * FROM prayer WHERE cgmchapter='$chapter' AND date BETWEEN '$new_from_date' AND '$new_to_date' ";
                         $query_run = mysqli_query($con,$query);
 
                         if(mysqli_num_rows($query_run) > 0)
@@ -92,7 +105,7 @@
                         {
                              ?>
                                 <tr>
-                                    <td colspan="5">No Record Found!!!</td>
+                                    <td colspan="6">No Record Found!!!</td>
                                 </tr>
                             <?php
                         }
@@ -121,7 +134,7 @@
                             $count = $row_count['total'];
                         }
                 ?>
-                <h1 class="total">Total of Appointment Reservations: <?php echo $count; ?></h1>
+                <h1 class="total">Total of Prayer Request & Prayer Reports: <?php echo $count; ?></h1>
             </div>
     </section>
 </body>

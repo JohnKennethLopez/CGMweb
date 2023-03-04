@@ -50,14 +50,14 @@ if(!isset($_SESSION["username"]))
                 <?php
                     include('cgmdbconnection.php');
                     $dibconfig = mysqli_select_db($con,'cgm');
-                    $chapter = $_GET['chapter'];
-                    $query = "SELECT * FROM attendance WHERE cgm_id = $chapter";
+                    
+                    $query = "SELECT * FROM attendance";
                     $query_run = mysqli_query($con,$query);
                     $check_attendance = mysqli_num_rows($query_run) > 0; 
                     if($check_attendance){
                         while($row = mysqli_fetch_array($query_run)){
                     ?>
-                    <tr class="scroll">
+                    <tr class="scrolll">
                         <td><?php echo $row['cgmchapter']?></td>
                         <td><?php echo $row['date']?></td>
                         <td><?php echo $row['fullname']?></td>
@@ -68,19 +68,23 @@ if(!isset($_SESSION["username"]))
                         
                     </tr>
                     <?php
+                            }
                         }
-                        } else{
-                            echo " No Attendee Found!";
+                        else
+                        {
+                             ?>
+                                <tr>
+                                    <td colspan="7"><center>No Attendance Record Found!!!</center></td>
+                                </tr>
+                            <?php
                         }
-                    
-
-                ?>
+                    ?>
             </table>
         </div>
         <?php 
                 include('cgmdbconnection.php');
 
-                $count_query = $count_query = mysqli_query($con, "SELECT COUNT(*) AS total FROM attendance WHERE cgm_id = $chapter");
+                $count_query = $count_query = mysqli_query($con, "SELECT COUNT(*) AS total FROM attendance");
                 $row_count = mysqli_fetch_assoc($count_query);
                 $count = $row_count['total'];
             ?>

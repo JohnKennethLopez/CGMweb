@@ -5,7 +5,7 @@ session_start();
 
 
 
-
+$message = "Your username or password is incorrect.";
 
 if(isset($_POST['loginsubmit'])){
 $username=$_POST['username'];
@@ -30,7 +30,9 @@ $password=$_POST['password'];
                 $_SESSION['id'] = $row['id'];
                 header("location: chapter_admin.php?chapter=$chapter");
             }else{
-                die(mysqli_error($con));    
+                header("Location: admin.php?error=Incorrect Username or Password");
+                echo "<script>alert('$message');</script>";
+		        exit();
             }
 
 

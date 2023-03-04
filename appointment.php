@@ -17,6 +17,7 @@ if(!isset($_SESSION["username"]))
     <link rel="shortcut icon" type="image/png" href="css/image/icon.png">
     <link rel="stylesheet" href="css/viewappointment.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 <body>
     <section id="admin">
@@ -49,17 +50,17 @@ if(!isset($_SESSION["username"]))
         <div class="labas">
             <div class="filter">
                 <div class="inn">
-                    <p class="backbtn"><a href="searchappoint.php?chapter=<?php echo $chapter ?>">Filter the Date</a></p>
+                    <p class="backbtn"><a href="searchappoint.php?chapter=<?php echo $chapter ?>"><i class="fa-solid fa-filter"></i>  Filter</a></p>
                 </div>
             </div>
             <div class="print">
                 <div class="pr">
-                    <p class="printbtn"><a href="printappoint.php">Print<br>Appointment List</a></p>
+                    <p class="printbtn"><a href="printappoint_chapter.php?chapter=<?php echo $chapter ?>">Print  <i class="fa-solid fa-print"></i></a></p>
                 </div>
             </div>
         </div>
         <div class="table">
-            <table class="tablecont">
+            <center><table class="tablecont">
                 <tr>
                     <th>DATE</th>
                     <th>CGM CHAPTER</th>
@@ -108,14 +109,18 @@ if(!isset($_SESSION["username"]))
                     <a href="javascript:void(0)" class="delete_btn_ajax delete-btn">Delete</a></td>
                     </tr>
                     <?php
+                            }
                         }
-                        } else{
-                            echo " No Appointment Reservation Found!";
+                        else
+                        {
+                             ?>
+                                <tr>
+                                    <td colspan="11"><center>No Appointments Record Found!!!</center></td>
+                                </tr>
+                            <?php
                         }
-                    
-
-                ?>
-            </table>
+                    ?>
+            </table></center>
         </div>
     </section>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

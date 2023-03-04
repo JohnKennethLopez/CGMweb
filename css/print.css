@@ -114,4 +114,26 @@ td {
     .totalattend, .totalattend *{
         width: 100%;
     }
+    .email-td, .email-td *{
+        max-width: 250px;
+    }
+    .total, .total *{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .tablecont, .tablecont *{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .tablecont th, .tablecont th *{
+        font-size: 13px;
+    }
+    .tablehead, .tablehead *{
+        font-size: 25px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .head, .head *{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .scroll, .scroll *{
+        font-size: 10px;
+    }
 }

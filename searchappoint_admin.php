@@ -25,7 +25,7 @@ if(!isset($_SESSION["username"]))
         </div>
         <div class="back">
             <div class="inn">
-                <p class="backbtn"> <a href="admin2.php"> Go Back to <br>the Admin</a></p>
+                <p class="backbtn"> <a href="admin2.php">Back</a></p>
             </div>
         </div>
         <h1 class="head">APPOINTMENT RESERVATION</h1><hr>
@@ -41,9 +41,9 @@ if(!isset($_SESSION["username"]))
                         while($row = mysqli_fetch_array($chapter_run)){
 
                         ?>
-                        <option value="<?php echo $row['id'] ?>"><?php echo $row['cgmchapter'] ?></option>
+                        <option value="<?php echo $row['cgmchapter'] ?>"><?php echo $row['cgmchapter'] ?></option>
                         <?php } ?>
-                            </select><br>
+                            </select><br>   
                             <div class="datefilter">
                                 <div class="fromdate">
                                     <label class="date_label" for="from_date">From Date:</label><br>

@@ -26,7 +26,10 @@ if(!isset($_SESSION["username"]))
         <div class="back">
             <div class="inn">
             <?php $chapter = $_GET['chapter']; ?>
-                <a style="text-decoration: none;" class="printbtn" href="chapter_admin.php?chapter=<?php echo $chapter ?>">BACK</a>
+                <a style="text-decoration: none; 
+                        color: black; 
+                        font-family: 'Orbitron', sans-serif;" 
+                        class="" href="chapter_admin.php?chapter=<?php echo $chapter ?>">BACK</a>
             </div>
         </div>
         <h1 class="head">APPOINTMENT RESERVATION</h1><hr>
