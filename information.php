@@ -88,6 +88,12 @@ if(!isset($_SESSION["username"]))
                             <p class="editbtn"><a href="editmisser.php">Edit<br>Mission & Service</a></p>
                         </div>
                     </div>
+
+                    <div class="editmisser">
+                        <div class="inside">
+                        <p class="editbtn"> <a href="editgivepic.php"> Edit Give page<br>photo & Info </a></p>
+                        </div>
+                    </div>
                     
                 </div>
     </section>

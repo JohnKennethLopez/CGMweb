@@ -37,7 +37,7 @@ if(!isset($_SESSION["username"]))
             <div class="labass">
                 <form action="announce.php" method="POST" enctype="multipart/form-data">
                 <h1 class="h1up">ANNOUNCEMENT</h1>
-                <input name="chapter" hidden value="<?php echo $_GET['chapter'] ?>">
+                <input type="text" name="chapter" hidden value="<?php echo $_GET['chapter'] ?>">
                 <div class="loob">
                 <div class="iisang">
                 <div class="container">
@@ -68,7 +68,7 @@ if(!isset($_SESSION["username"]))
                     </div>
                     <div class="isang">
                         <label for="church">CGM Chapter</label>
-                            <select name="cgmchapter" id="church" required>
+                            <!-- <select name="cgmchapter" id="church" required>
                                 <option value="select" disabled selected>Select CGM Church</option>
                                     <option value="CGM Las Piñas Main">CGM Las Piñas Main</option>
                                     <option value="CGM Bacoor, Cavite">CGM Bacoor, Cavite</option>
@@ -90,7 +90,8 @@ if(!isset($_SESSION["username"]))
                                     <option value="CGM Sta. Rosa, Laguna">CGM Sta. Rosa, Laguna</option>
                                     <option value="CGM Taguig City">CGM Taguig City</option>
                                     <option value="CGM Gen. Tinio, Nueva Ecija">CGM Tinio, Nueva Ecija</option>
-                            </select>
+                            </select> -->
+                            <input type="text" name="cgmchapter" value="<?php echo $row['cgmchapter'] ?>" readonly>
                         </div>
                         <div class="isang">
                             <label for="announceTitle">Announcement Title:</label>

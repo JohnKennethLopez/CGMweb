@@ -86,6 +86,9 @@
                                 <input type="hidden" name="lat" id="lat">
                                 <input type="hidden" name="long" id="long">
                                 <button onclick="myGeolocator()" class="button" name="near" id="near" >Find the nearest CGM chapter</button>
+                                <div class="note">
+                                    <p>Note: For accurate results, please use your mobile devices or any device with a GPS</p>
+                                </div>
                                 <p id="location"></p>
                                 <script>
                                     // var x = document .getElementById("location"); 
@@ -120,6 +123,7 @@
 
                         
                     </div>
+                    
         </section>
 
         <section id="googlemap">

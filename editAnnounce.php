@@ -44,7 +44,7 @@ if(!isset($_SESSION["username"]))
                 <?php
                     
                     
-                    $query = "SELECT * FROM announcement";
+                    $query = "SELECT * FROM announcement WHERE cgm_id = $chapter ";
                     $query_run = mysqli_query($con,$query);
                     $check_attendance = mysqli_num_rows($query_run) > 0; 
                     if($check_attendance){
@@ -59,13 +59,17 @@ if(!isset($_SESSION["username"]))
                         <a href="javascript:void(0)" class="delete_btn_ajax delete-btn">Delete</a></td>
                     </tr>
                     <?php
+                            }
                         }
-                        } else{
-                            echo " No Event Found!";
+                        else
+                        {
+                             ?>
+                                <tr>
+                                    <td colspan="5"><center>You haven't Posted an announcement yet!  </center></td>
+                                </tr>
+                            <?php
                         }
-                    
-
-                ?>
+                    ?>
             </table>
         </div>
         

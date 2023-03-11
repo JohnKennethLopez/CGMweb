@@ -49,6 +49,11 @@ $week = '';
 $week .= str_repeat('<td></td>', $str);
 
 $chapter = $_GET['chapter'];
+if(!isset($_GET['ym'])){
+    $month = '';
+}else{
+    $month = $_GET['ym'];
+}
 
 for ( $day = 1; $day <= $day_count; $day++, $str++) {
     $nday = sprintf("%02d", $day);
@@ -86,7 +91,7 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
         }
          else {
 
-            $week .= '<td>' . $day . '<br><button type="button" name="book" class="btn btn-info" data-toggle="modal" data-target="#my-modal"><a href="?chapter=' . $chapter . '&date=' . $date . '#myModal">Book</a></button>';
+            $week .= '<td>' . $day . '<br><button type="button" name="book" class="btn btn-info" data-toggle="modal" data-target="#my-modal"><a href="?ym=' . $month . '&chapter=' . $chapter . '&date=' . $date . '#myModal">Book</a></button>';
 
         }
 
